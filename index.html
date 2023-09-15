@@ -1,0 +1,52 @@
+---
+layout: default
+menu: home
+css: ['index.css', 'sidebar-popular-repo.css']
+---
+<section class="jumbotron">
+    <div class="container">
+        <h1>atelier NZML</h1>
+        <div id="jumbotron-meta-info">
+            atelier NZMLは出身・居住地・勤務先も違うメンバー9人によって活動しているグループです。<br>
+            さまざまなことに挑戦し、成果をみなさんに共有するためのページです。
+        </div>
+    </div>
+</section>
+<section class="content container">
+    <div class="row">
+        <!-- Post List -->
+        <div class="col-md-8">
+            <div class="pt-3 pb-1" style="border-bottom: 1px solid #333;">
+                <h3>最近の投稿</h3>
+            </div>
+            <div class="post-list py-3">
+                {% for post in paginator.posts %}
+                <div class="card post-list-item mb-1">
+                    <div class="card-body">
+                        <h2 class="post-list-title card-title">
+                            <a class="hvr-underline-from-center" href="{{ site.url }}{{ post.url }}">{{ post.title }}</a>
+                        </h2>
+                        <p class="post-list-description card-text">
+                            {{ post.excerpt | strip_html | strip }}
+                        </p>
+                        <p class="post-list-meta">
+                            <span class="octicon octicon-calendar"></span> {{ post.date | date: "%Y/%m/%d" }}
+                        </p>
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+
+            <!-- Pagination -->
+            {% include pagination.html %}
+
+        </div>
+
+        <div class="col-md-4">
+            <div class="py-3">
+                {% include twitter-timeline.html %}
+            </div>
+        </div>
+    </div>
+</section>
+
