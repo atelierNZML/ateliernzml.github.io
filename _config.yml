@@ -9,12 +9,6 @@
 title: atelier NZML # ex. I m Chuan
 name: atelierNZML # ex. DONGChuan
 email: hogehoge@example.com
-location: My location # ex. Nice, France
-company: MyCompany
-company_url: my_company_website
-github_url: my_github_url # ex. https://github.com/DONGChuan
-github_username: # ex. DONGChuan
-description: description_of_your_web_site
 favicon: favicon.png # Image must be in assets/images
 repository: atelierNZML/atelier-nzml.github.io # ex. DONGChuan/DONGChuan.github.io
 
@@ -26,6 +20,7 @@ url: http://localhost:4000
 ## Gem
 gems:
   - jekyll-paginate
+  - jekyll-paginate-multiple
 #   - jekyll-geo-pattern
 #   - rouge
 #   - kramdown
@@ -63,7 +58,7 @@ navs:
 
   -
     href: /nazoml
-    label: NaZoML (WIP)
+    label: NaZoML
     icon: <i class="fa-regular fa-circle-question"></i>
 
   -
@@ -84,7 +79,3 @@ side_bar_repo_limit: 5 # Number of repos to show
 
 
 # For about.html. Fell free to create your own!
-skill_software_keywords: [Java, C, C++, Qt, Python, MySQL, Oracle, SQLite, PL/SQL, Design Patterns]
-skill_j2ee_keywords: [Spring, Struct, Hibernet, MyBatis, JSP]
-skill_web_keywords: [HTML, CSS, JS, JQuery, Ajax, AngularJS, NodeJS, ExpressJS, MongoDB, Redis, PHP, Symfony, Boostrap]
-skill_mobile_app_keywords: [Android, Sketch UI Desgin]

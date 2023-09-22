@@ -3,12 +3,16 @@ layout: default
 menu: Home
 css: ['index.css', 'sidebar-popular-repo.css']
 ---
-<section class="jumbotron">
-    <div class="container">
-        <h1>atelier NZML</h1>
-        <div id="jumbotron-meta-info">
-            atelier NZMLは出身・居住地・勤務先も違うメンバーによって活動しているグループです。<br>
-            さまざまなことに挑戦し、成果をみなさんに共有するためのページです。
+<section class="jumbotron-wrapper">
+    <div class="jumbotron-img">
+        <div class="jumbotron">
+            <div class="container">
+                <h1 class="fw-bold">atelier NZML</h1>
+                <div id="jumbotron-meta-info">
+                    atelier NZMLは出身・居住地・勤務先も違うメンバーによって活動しているグループです。<br>
+                    さまざまなことに挑戦し、成果をみなさんに共有するためのページです。
+                </div>
+            </div>
         </div>
     </div>
 </section>
@@ -39,7 +43,7 @@ css: ['index.css', 'sidebar-popular-repo.css']
 
             <!-- Pagination -->
             {% include pagination.html %}
-
+            
         </div>
 
         <div class="col-md-4">
@@ -49,4 +53,3 @@ css: ['index.css', 'sidebar-popular-repo.css']
         </div>
     </div>
 </section>
-

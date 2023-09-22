@@ -1,7 +1,7 @@
 ---
-layout: page
+layout: default
 title: NaZoML
-menu: nazoml
+menu: NaZoML
 subtitle: ''
                             
 css: ['nazoml.css', 'sidebar-popular-repo.css']

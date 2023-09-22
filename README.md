@@ -13,6 +13,10 @@ _postsに`md`か`html`のファイルを作成
 ファイル名の日付が現在の日付より前のものがページに表示される。  
 (未来の日付をつけると投稿予約ができる)
 
+## TODO
+- favicon
+- nazoml
+- nzmLyNx
 
 ## License
 
