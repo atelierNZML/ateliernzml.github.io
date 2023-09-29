@@ -1,8 +1,7 @@
 ---
-layout: page
+layout: default
 title: NZMLyNx
-menu: nzmlynx
-css: ['open-source.css']
-javascript: ['underscore-min.js']
+menu: NZMLyNx
+css: ['nzmlynx.css']
 ---
 {% include nzmlynx.html %}

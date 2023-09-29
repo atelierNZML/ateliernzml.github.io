@@ -63,7 +63,7 @@ navs:
 
   -
     href: /nzmlynx
-    label: NZMLyNx (WIP)
+    label: NZMLyNx
     icon: <i class="fa-solid fa-globe"></i>
   
 
@@ -71,11 +71,3 @@ navs:
 # Sidebar to show popular repo
 side_bar_repo_limit: 5 # Number of repos to show
 
-# Google Analytics
-# analytics :
-#   provider : google
-#   google :
-#       tracking_id : 'tracking_id'  # ex. UA-72165600-X
-
-
-# For about.html. Fell free to create your own!

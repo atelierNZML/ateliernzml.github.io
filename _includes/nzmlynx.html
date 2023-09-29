@@ -1,53 +1,37 @@
-{% assign sorted_repos = (site.github.public_repositories | sort: 'stargazers_count') | reverse | where: "fork", "false" %}
-<div id="container-open-source">
-    <section class="jumbotron geopattern" data-pattern-id="{{ page.title }}">
-        <div class="container">
-            <div id="jumbotron-meta-info">
-                <h1>Open Source Projects</h1>
-                <span class="meta-info">
-                    I have <span class="repo-count badge">{{ sorted_repos.size }}</span> projects on Github
-                </span>
-            </div>
-        </div>
-    </section>
-
-    <section class="container">
-        <div class="repo-list row">
-            <!-- Check here for github metadata -->
-            <!-- https://help.github.com/articles/repository-metadata-on-github-pages/ -->
-            {% for repo in sorted_repos %}
-            <div class="col-md-4 card text-center">
-                <div class="thumbnail">
-                    <div class="card-image geopattern" data-pattern-id="{{ repo.name }}">
-                        <div class="card-image-cell">
-                            <h3 class="card-title">
-                                <a href="{{ repo.html_url }}" target="_blank">{{ repo.name }}</a>
-                            </h3>
-                        </div>
-                    </div>
-                    <div class="caption">
-                        <div class="card-description">
-                            <p class="card-text">{{ repo.description }}</p>
-                        </div>
-                        <div class="card-text">
-                            <span data-toggle="tooltip" class="meta-info" title="{{ repo.stargazers_count }} stars">
-                                <span class="octicon octicon-star"></span> {{ repo.stargazers_count }}
-                            </span>
-                            <span data-toggle="tooltip" class="meta-info" title="{{ repo.forks_count }} forks">
-                                <span class="octicon octicon-git-branch"></span> {{ repo.forks_count }}
-                            </span>
-                            <span data-toggle="tooltip" class="meta-info" title="Last updated：{{ repo.updated_at }}">
-                                <span class="octicon octicon-clock"></span>
-                                <time datetime="{{ repo.updated_at }}" title="{{ repo.updated_at }}">{{ repo.updated_at | date: '%Y-%m-%d' }}</time>
-                            </span>
-                        </div>
+<section class="jumbotron-wrapper">
+    <div class="jumbotron-img">
+        <div class="jumbotron">
+            <div class="container">
+                <div class="jumbotron-content">
+                    <h1 class="fw-bold">NZMLyNx</h1>
+                    <div id="jumbotron-meta-info">
+                        
                     </div>
                 </div>
             </div>
-            {% endfor %}
         </div>
-    </section>
+    </div>
+</section>
 
+<div class="content container">
+    <div class="py-3">
+        <nav class="nav nav-tabs" role="tablist">
+            <a class="nav-link active" data-bs-toggle="tab" href="#allLinksTab" role="tab" aria-selected="true">全て</a>
+            <a class="nav-link" data-bs-toggle="tab" href="#mathLinksTab" role="tab" aria-selected="false">数学解説動画</a>
+            <a class="nav-link" data-bs-toggle="tab" href="#otherLinksTab" role="tab">その他</a>
+        </nav>
+        <div class="tab-content">
+            <div class="tab-pane fade show active" id="allLinksTab" role="tabpanel">
+                <div class="p-3 link-list"></div>
+            </div>
+            <div class="tab-pane fade" id="mathLinksTab" role="tabpanel">
+                <div class="p-3 link-list"></div>
+            </div>
+            <div class="tab-pane fade" id="otherLinksTab" role="tabpanel">
+                <div class="p-3 link-list"></div>
+            </div>
+        </div>
+    </div>
 </div>
-<script>
-</script>
+
+<script type="text/javascript" src="/assets/js/nzmlynx.js"></script>

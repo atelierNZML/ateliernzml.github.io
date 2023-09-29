@@ -16,26 +16,10 @@
     <div class="row py-3">
         <div class="col-md-8">
             <div class="py-3">
-                <div class="post-list">
-                {% for post in site.posts %}
-                    {% if post.path contains 'nazo' %}
-                    <div class="card post-list-item mb-1">
-                        <div class="card-body">
-                            <h2 class="post-list-title card-title">
-                                <a class="hvr-underline-from-center" href="{{ site.url }}{{ post.url }}">{{ post.title }}</a>
-                            </h2>
-                            <p class="post-list-description card-text">
-                                {{ post.excerpt | strip_html | strip }}
-                            </p>
-                            <p class="post-list-meta">
-                                <span class="octicon octicon-calendar"></span> {{ post.date | date: "%Y/%m/%d" }}
-                            </p>
-                        </div>
-                    </div>
-                    {% endif %}
-                {% endfor %}
+                <div id="nazoPostList" class="post-list">
                 </div>
             </div>
+            <div id="nazoPagination" class="d-flex justify-content-center"></div>
         </div>
 
         <div class="col-md-4">
@@ -45,6 +29,9 @@
         </div>
     </div>
 </div>
-<div>
 
+<div id="postData" class="d-none">
+    {% assign nazo_posts = site.posts | where_exp: 'post', 'post.path contains "nazo"' %}
+    {{ nazo_posts | jsonify }}
 </div>
+<script type="text/javascript" src="/assets/js/nazoml.js"></script>
