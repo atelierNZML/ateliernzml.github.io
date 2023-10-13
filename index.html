@@ -16,37 +16,72 @@ css: ['index.css', 'sidebar-popular-repo.css']
         </div>
     </div>
 </section>
-<section class="content container">
-    <div class="row">
-        <!-- Post List -->
-        <div class="col-md-8">
-            <div class="pt-3 pb-1" style="border-bottom: 1px solid #333;">
-                <h3>最近の投稿</h3>
-            </div>
-            <div class="post-list py-3">
-                {% for post in paginator.posts %}
-                <div class="card post-list-item mb-1">
-                    <div class="card-body">
-                        <h2 class="post-list-title card-title">
-                            <a class="hvr-underline-from-center" href="{{ site.url }}{{ post.url }}">{{ post.title }}</a>
-                        </h2>
-                        <p class="post-list-description card-text">
-                            {{ post.excerpt | strip_html | strip }}
-                        </p>
-                        <p class="post-list-meta">
-                            <span class="octicon octicon-calendar"></span> {{ post.date | date: "%Y/%m/%d" }}
-                        </p>
-                    </div>
+<section id="newNazo" class="new-nazo-section content py-3">
+    <div class="pb-1">
+        <h1 class="text-center">今週のNAZO</h1>
+    </div>
+    {% for post in paginator.posts limit: 1 %}
+    <div class="d-flex justify-content-center">
+        <img class="new-nazo-img" src="{{ post.img_url }}" />
+    </div>
+    <div class="text-center">
+        <a href="{{ site.url }}{{ post.url }}" class="new-nazo-link">NAZOの詳細ページへ</a>
+    </div>
+    {% endfor %}
+</section>
+<section id="recentNazo" class="content py-3">
+    <div class="pb-1">
+        <h1 class="text-center">過去のNAZO</h1>
+    </div>
+    <div class="py-3 d-flex justify-content-center">
+        <div class="recent-post-list">
+            {% for post in paginator.posts offset: 1 limit: 3 %}
+            <!-- 
+            <div class="card post-list-item mb-1">
+                <div class="card-body">
+                    <h2 class="post-list-title card-title">
+                        <a class="hvr-underline-from-center" href="{{ site.url }}{{ post.url }}">{{ post.title }}</a>
+                    </h2>
+                    <p class="post-list-description card-text">
+                        {{ post.excerpt | strip_html | strip }}
+                    </p>
+                    <p class="post-list-meta">
+                        <span class="octicon octicon-calendar"></span> {{ post.date | date: "%Y/%m/%d" }}
+                    </p>
                 </div>
-                {% endfor %}
             </div>
-
-            <!-- Pagination -->
-            {% include pagination.html %}
-            
+            -->
+            <div class="card post-card mb-1 d-inline-block">
+                <div class="card-body">
+                    <h2 class="post-list-title card-title">
+                        <a class="hvr-underline-from-center" href="{{ site.url }}{{ post.url }}">{{ post.title }}</a>
+                    </h2>
+                    <p class="post-list-description card-text">
+                        {{ post.excerpt | strip_html | strip }}
+                    </p>
+                    <div class="text-center" style="height: 200px;">
+                        <img class="post-img" src="{{ post.img_url }}" alt="謎" />
+                    </div>
+                    <p class="post-list-meta">
+                        <span class="octicon octicon-calendar"></span> {{ post.date | date: "%Y/%m/%d" }}
+                    </p>
+                </div>
+            </div>
+            {% endfor %}
         </div>
+    </div>
+</section>
 
-        <div class="col-md-4">
+<section id="extraInfo" class="extra-info-section d-flex justify-content-center content py-3">
+    <div class="extra-info row">
+        <div class="col-6">
+
+        </div>
+        <div class="col-6">
+            <h3>
+                Xでも謎を投稿しています<br>
+                ぜひフォローしてください！
+            </h3>
             <div class="py-3">
                 {% include twitter-timeline.html %}
             </div>

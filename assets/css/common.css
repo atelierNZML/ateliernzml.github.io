@@ -1,7 +1,7 @@
 * {
     margin: 0;
     padding: 0;
-    font-family: "Nunito Sans", sans-serif;
+    font-family: "M PLUS Rounded 1c", "Nunito Sans", sans-serif;
 }
 
 /** Header **/
@@ -142,6 +142,14 @@
     position: relative;
     list-style: none;
     border-bottom: 1px solid #eee;
+}
+
+.post-list-item .post-img {
+    max-width: 100%;
+    max-height: 500px;
+    text-align: center;
+    margin: auto;
+    border: 1px solid #ddd;
 }
 
 .post-list-title a {
