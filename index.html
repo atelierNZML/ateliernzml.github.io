@@ -25,17 +25,18 @@ css: ['index.css', 'sidebar-popular-repo.css']
         <img class="new-nazo-img" src="{{ post.img_url }}" />
     </div>
     <div class="text-center">
-        <a href="{{ site.url }}{{ post.url }}" class="new-nazo-link">NAZOの詳細ページへ</a>
+        <a href="{{ site.url }}{{ post.url }}" class="new-nazo-link">NAZOの詳細ページへ&nbsp;<i class="fa-solid fa-angles-right"></i></a>
     </div>
     {% endfor %}
 </section>
 <section id="recentNazo" class="content py-3">
     <div class="pb-1">
-        <h1 class="text-center">過去のNAZO</h1>
+        <h1 class="text-center">最近投稿したNAZO</h1>
     </div>
-    <div class="py-3 d-flex justify-content-center">
+    <div class="py-3 container d-flex justify-content-center">
         <div class="recent-post-list">
-            {% for post in paginator.posts offset: 1 limit: 3 %}
+            {% assign nazo_posts = site.posts | where_exp: 'post', 'post.path contains "nazo"' %}
+            {% for post in nazo_posts offset: 1 limit: 5 %}
             <!-- 
             <div class="card post-list-item mb-1">
                 <div class="card-body">
@@ -53,12 +54,14 @@ css: ['index.css', 'sidebar-popular-repo.css']
             -->
             <div class="card post-card mb-1 d-inline-block">
                 <div class="card-body">
-                    <h2 class="post-list-title card-title">
-                        <a class="hvr-underline-from-center" href="{{ site.url }}{{ post.url }}">{{ post.title }}</a>
-                    </h2>
+                    <div class="post-list-title card-title">
+                        <a class="" href="{{ site.url }}{{ post.url }}">{{ post.title }}</a>
+                    </div>
+                    <!--
                     <p class="post-list-description card-text">
                         {{ post.excerpt | strip_html | strip }}
                     </p>
+                    -->
                     <div class="text-center" style="height: 200px;">
                         <img class="post-img" src="{{ post.img_url }}" alt="謎" />
                     </div>
@@ -70,23 +73,25 @@ css: ['index.css', 'sidebar-popular-repo.css']
             {% endfor %}
         </div>
     </div>
-    <div>
-        <a href="{{ site.url }}/posts">More</a>
+    <div class="container px-4 d-flex justify-content-end">
+        <a class="bordered-btn" href="{{ site.url }}/nazoml">NAZOの一覧を見る</a>
     </div>
 </section>
 
-<section id="extraInfo" class="extra-info-section d-flex justify-content-center content py-3">
-    <div class="extra-info row">
-        <div class="col-6">
-
-        </div>
-        <div class="col-6">
-            <h3>
-                Xでも謎を投稿しています<br>
-                ぜひフォローしてください！
-            </h3>
-            <div class="py-3">
-                {% include twitter-timeline.html %}
+<section id="extraInfo" class="extra-info-section py-3">
+    <div class="container d-flex justify-content-center">
+        <div class="row w-100">
+            <div class="col-12 col-md-8">
+    
+            </div>
+            <div class="col-12 col-md-4">
+                <h3>
+                    Xでも謎を投稿しています<br>
+                    ぜひフォローしてください！
+                </h3>
+                <div class="py-3">
+                    {% include twitter-timeline.html %}
+                </div>
             </div>
         </div>
     </div>

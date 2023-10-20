@@ -1,9 +1,11 @@
-<header class="site-header">
-    <div class="container d-flex justify-content-between">
-        <a id="site-header-brand" href="/" title="{{ site.name }}">
-            <span class="octicon octicon-mark-github"></span> {{ site.name }}
-        </a>
-        <nav class="site-header-nav" role="navigation">
+<header class="site-header py-1 py-md-2">
+    <div class="container d-block d-md-flex justify-content-between">
+        <div>
+            <a id="site-header-brand" href="/" title="{{ site.name }}">
+                <img src="/assets/images/header-logo.png" class="header-logo" />
+            </a>
+        </div>
+        <nav class="site-header-nav d-block" role="navigation">
             {% for nav in site.navs %}
             <a href="{{ nav.href }}"
                class="{% if page.menu == nav.label %} selected disabled {% endif %} site-header-nav-item hvr-underline-from-center"

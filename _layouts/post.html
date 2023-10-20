@@ -1,29 +1,62 @@
 ---
 layout: default
-css: ['sidebar-post-nav.css']
+css: ['post.css']
 ---
-<article class="post container" itemscope itemtype="http://schema.org/BlogPosting">
-
-    <div class="row">
-
-        {% if page.no-post-nav %}
-        <div class="col-md-12 markdown-body">
-
-            {{ content }}
-
+<div class="post container" style="padding-top: 120px;">
+    <div class="my-3">
+        <a class="bordered-btn" href="{{ site.url }}/nazoml"><i class="fa-solid fa-angles-left"></i>&nbsp;一覧に戻る</a>
+    </div>
+    <div class="nazo-header d-flex justify-content-start align-items-end">
+        <div class="nazo-title me-3">
+            {{ page.title }} 
         </div>
-        {% else %}
-        <div class="col-md-8 markdown-body">
-
-            {{ content }}
-
+        <div class="post-date">
+            ({{ page.date | date: "%Y/%m/%d" }})
         </div>
-
-        <div class="col-md-4">
-            {% include sidebar-post-nav.html %}
-        </div>
-        {% endif %}
-
     </div>
 
-</article>
+    <div class="nazo-content my-3 d-flex justify-content-center">
+        <img class="nazo-img" src="{{ page.img_url }}" />
+    </div>
+
+    <div class="px-4">
+        <div class="my-3">
+            {% if page.hint1 != nil %}
+            <details class="details nazo-hint">
+                <summary class="details-summary">ヒント①</summary>
+                <p class="details-content">
+                    {{ page.hint1 }}
+                </p>
+            </details>
+            {% endif %}
+            
+            {% if page.hint2 != nil %}
+            <details class="details nazo-hint">
+                <summary class="details-summary">ヒント②</summary>
+                <p class="details-content">
+                    {{ page.hint2 }}
+                </p>
+            </details>
+            {% endif %}
+        
+            {% if page.hint3 != nil %}
+            <details class="details last-detail nazo-hint">
+                <summary class="details-summary">ヒント③</summary>
+                <p class="details-content">
+                    {{ page.hint3 }}
+                </p>
+            </details>
+            {% endif %}
+        </div>
+
+        <div class="answer">
+            <details class="details nazo-answer">
+                <summary class="details-summary">答え</summary>
+                <p class="details-content">
+                    {{ page.answer }}
+                    {{ content }}
+                </p>
+            </details>
+        </div>
+    </div>
+</div>
