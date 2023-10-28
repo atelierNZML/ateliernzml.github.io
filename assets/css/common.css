@@ -105,8 +105,8 @@
 }
 
 .jumbotron {
-    padding-top: 200px;
-    padding-bottom: 100px;
+    padding-top: 150px;
+    padding-bottom: 60px;
     width: 100%;
     height: 100%;
     background-color: rgba(0, 0, 0, 0.3);
@@ -128,6 +128,94 @@
 
 
 /** Post List **/
+.post-list {
+    display: flex;
+    /* justify-content: space-between; */
+    justify-content: flex-start;
+    flex-wrap: wrap;
+    align-items: flex-start;
+}
+
+.post-card {
+    display: inline-block;
+    perspective: 1000;
+    position: relative;
+    text-align: left;
+    transition: all 0.3s 0s ease-in;
+    width: 80%;
+    max-width: 400px;
+    z-index: 1;
+    border-radius: 2px;
+    background: #fff;
+    box-shadow: 0 0 3px 0 rgb(0 0 0 / 12%), 0 2px 3px 0 rgb(0 0 0 / 22%);
+    padding: 0;
+    cursor: pointer;
+    margin-bottom: 25px;
+    text-decoration: none;
+    border-radius: 5px;
+    margin: 8px;
+}
+
+.post-card .post-img{
+    width: 100%;
+    max-width: 100%;
+    /* max-height: 200px; */
+    border-radius: 5px 5px 0 0;
+}
+
+.post-card .post-img-holder {
+    background: rgba(0,0,0,0.1);
+    height: 0;
+    padding-bottom: 57%;
+    overflow: hidden;
+}
+.post-card .post-img-holder img {
+    transition: all 0.1s 0s ease-in;
+}
+.post-card:hover > .post-img-holder img {
+    transform: scale(1.05);
+}
+.post-card .card-title {
+    background: #ffffff;
+    padding: 8px 18px 14px;
+    position: relative;
+    z-index: 0;
+    border-radius: 0 0 5px 5px;
+}
+.post-card .card-title p {
+    font-size: 1.1rem;
+    font-weight: 600;
+    letter-spacing: -0.05em;
+    margin: 6px 0 3px;
+    padding: 0;
+    line-height: 1.56;
+    color: #555;
+}
+
+.post-card .card-title .card-htitle {
+    font-size: 24px;
+}
+
+.post-card .card-title .post-date {
+    display: flex;
+    flex-flow: row;
+    font-weight: 600;
+    font-size: 0.85rem;
+    justify-content: flex-start;
+    letter-spacing: 0.02rem;
+    color: #b5b5b5;
+    position: relative;
+}
+
+@media screen and (max-width: 767px) {
+    .post-list {
+        flex-direction: column;
+    }
+    .post-card {
+        width: 100%;
+    }
+}
+
 .post-list-item {
     position: relative;
     list-style: none;

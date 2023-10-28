@@ -4,7 +4,7 @@
     background: #3E3B59;
 }
 
-.new-nazo-section {
+.new-nazo-section, .extra-info-section {
     background-color: #F2F4FF;
 }
 .new-nazo-img {
@@ -22,25 +22,5 @@
     white-space: nowrap;
     width: 100%;
 }
-.recent-post-list .post-card {
-    width: 80%;
-    max-width: 400px;
-    height: 330px;
-    /* background-color: #f5f5f5; */
-    border: 1px solid #ddd;
-}
 
-.post-list-title {
-    font-size: 24px;
-}
-
-.post-card .post-img {
-    max-width: 100%;
-    max-height: 200px;
-    border: 1px solid #ddd;
-}
-
-.extra-info-section {
-    background-color: #F2F4FF;
-}
 

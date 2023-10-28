@@ -1,10 +1,9 @@
 $(function() {
     const postsJson = $('#postData').text();
     const posts = JSON.parse(postsJson);
-    console.log(posts);
     let url = new URL(window.location.href);
     let params = url.searchParams;
-    const perPage = params.get('per') || 2;
+    const perPage = params.get('per') || 12;
     const maxPages = Math.ceil(posts.length / perPage);
     let currentPage = params.get('page') || 1;
     if (currentPage > maxPages) {
@@ -15,7 +14,7 @@ $(function() {
         $('#nazoPagination').append(paginationElem);
     }
     startPageNum = (currentPage - 1) * perPage;
-    endPageNum = Math.max(startPageNum + perPage - 1, maxPages-1)
+    endPageNum = Math.max(startPageNum + perPage - 1, posts.length - 1)
 
     let nazoPostList = $('#nazoPostList');
     for (let i=startPageNum; i<=endPageNum; i++) {
@@ -25,22 +24,27 @@ $(function() {
     }
 
     function getPostElem(post) {
-        let cardElem = $('<div class="card post-list-item mb-1"></div>');
-        let cardBody = $('<div class="card-body"></div>');
+        let cardElem = $('<a class="post-card mb-1"></a>').attr('href', post.url);
         
-        let cardTitle = $('<h2 class="post-list-title card-title"></h2>');
-        let cardTitleLink = $('<a class="hvr-underline-from-center"></a>').text(post.title).attr('href', post.url)
-        cardTitle.append(cardTitleLink);
+        let imgHolder = $('<div class="text-center post-img-holder"></div>');
+        let nazoImg = $('<img class="post-img" alt="NAZO"/>').attr('src', post.img_url);
+        imgHolder.append(nazoImg)
+        
+        let cardTitleElem = $('<div class="post-list-title card-title"></div>');
+        let postDate = $('<p class="post-date"></p>').text(getDate(post));
+        let postTitle = $('<p class="card-htitle"></div>').text(post.title);
+        cardTitleElem.append(postDate);
+        cardTitleElem.append(postTitle);
+
         let categoryList = $('<div class="category-list"></div>');
         $.each(post.categories, function(_idx, category) {
             categoryList.append($('<span class="badge bg-secondary py-1 px-2 me-2"></span>').text(category));
         });
-        let datetime = $('<p class="datetime"></p>').text(getDate(post));
 
-        cardBody.append(cardTitle);
-        cardBody.append(categoryList);
-        cardBody.append(datetime);
-        cardElem.append(cardBody);
+        cardTitleElem.append(categoryList)
+
+        cardElem.append(imgHolder);
+        cardElem.append(cardTitleElem);
         return cardElem;
     }
 

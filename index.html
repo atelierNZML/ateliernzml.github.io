@@ -37,39 +37,19 @@ css: ['index.css', 'sidebar-popular-repo.css']
         <div class="recent-post-list">
             {% assign nazo_posts = site.posts | where_exp: 'post', 'post.path contains "nazo"' %}
             {% for post in nazo_posts offset: 1 limit: 5 %}
-            <!-- 
-            <div class="card post-list-item mb-1">
-                <div class="card-body">
-                    <h2 class="post-list-title card-title">
-                        <a class="hvr-underline-from-center" href="{{ site.url }}{{ post.url }}">{{ post.title }}</a>
-                    </h2>
-                    <p class="post-list-description card-text">
-                        {{ post.excerpt | strip_html | strip }}
+            <a href="{{ site.url }}{{ post.url }}" class="post-card mb-1">
+                <div class="text-center post-img-holder">
+                    <img class="post-img" src="{{ post.img_url }}" alt="謎" />
+                </div>
+                <div class="post-list-title card-title">
+                    <p class="post-date">
+                        {{ post.date | date: "%Y/%m/%d" }}
                     </p>
-                    <p class="post-list-meta">
-                        <span class="octicon octicon-calendar"></span> {{ post.date | date: "%Y/%m/%d" }}
+                    <p class="card-htitle">
+                        {{ post.title }}
                     </p>
                 </div>
-            </div>
-            -->
-            <div class="card post-card mb-1 d-inline-block">
-                <div class="card-body">
-                    <div class="post-list-title card-title">
-                        <a class="" href="{{ site.url }}{{ post.url }}">{{ post.title }}</a>
-                    </div>
-                    <!--
-                    <p class="post-list-description card-text">
-                        {{ post.excerpt | strip_html | strip }}
-                    </p>
-                    -->
-                    <div class="text-center" style="height: 200px;">
-                        <img class="post-img" src="{{ post.img_url }}" alt="謎" />
-                    </div>
-                    <p class="post-list-meta">
-                        <span class="octicon octicon-calendar"></span> {{ post.date | date: "%Y/%m/%d" }}
-                    </p>
-                </div>
-            </div>
+            </a>
             {% endfor %}
         </div>
     </div>
