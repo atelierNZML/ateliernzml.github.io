@@ -7,4 +7,4 @@ subtitle: ''
 css: ['nazoml.css', 'sidebar-popular-repo.css']
 ---
 
-{% include nazoml.html %}
+{% include nazolist.html %}

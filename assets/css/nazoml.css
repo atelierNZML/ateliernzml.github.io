@@ -2,3 +2,22 @@
     background-image: url("/assets/images/nazoml_main.jpg");
     background-size: cover;
 }
+
+.new-nazo-section, .extra-info-section {
+    background-color: #F2F4FF;
+}
+.new-nazo-img {
+    width: 100%;
+    max-width: 500px;
+    max-height: 500px;
+}
+.new-nazo-link {
+    font-size: 24px;
+    text-decoration: none;
+}
+
+.recent-post-list {
+    overflow: scroll;
+    white-space: nowrap;
+    width: 100%;
+}

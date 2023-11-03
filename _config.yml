@@ -56,17 +56,18 @@ navs:
     href: /
     label: Home
     icon: <i class="fa-solid fa-house"></i>
-
   -
     href: /nazoml
     label: NaZoML
     icon: <i class="fa-regular fa-circle-question"></i>
-
+  -
+    href: /minecraft
+    label: Minecraft
+    icon: <i class="fa-solid fa-gamepad"></i>
   -
     href: /nzmlynx
     label: NZMLyNx
     icon: <i class="fa-solid fa-globe"></i>
-  
 
 
 # Sidebar to show popular repo
