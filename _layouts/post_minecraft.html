@@ -1,0 +1,21 @@
+---
+layout: default
+css: ['post_minecraft.css']
+---
+<div class="post container" style="padding-top: 120px;">
+    <div class="my-3">
+        <a class="bordered-btn" href="{{ site.url }}/minecraft"><i class="fa-solid fa-angles-left"></i>&nbsp;一覧に戻る</a>
+    </div>
+    <div class="nazo-header d-flex justify-content-start align-items-end">
+        <div class="nazo-title me-3">
+            {{ page.title }} 
+        </div>
+        <div class="post-date">
+            ({{ page.date | date: "%Y/%m/%d" }})
+        </div>
+    </div>
+
+    <div class="nazo-content my-3 d-flex justify-content-center">
+        <img class="nazo-img" src="{{ page.img_url1 }}" />
+    </div>
+</div>

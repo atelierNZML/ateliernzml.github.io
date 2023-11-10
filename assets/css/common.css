@@ -155,6 +155,9 @@
     border-radius: 5px;
     margin: 8px;
 }
+.post-card.minecraft {
+    max-width: 350px;
+}
 
 .post-card .post-img{
     width: 100%;
@@ -201,10 +204,15 @@
     flex-flow: row;
     font-weight: 600;
     font-size: 0.85rem;
-    justify-content: flex-start;
+    justify-content: space-between;
     letter-spacing: 0.02rem;
     color: #b5b5b5;
     position: relative;
+}
+.post-card .card-title .post-date .players {
+    font-size: 0.85rem;
+    color: #b5b5b5;
+    margin: 0
 }
 
 @media screen and (max-width: 767px) {

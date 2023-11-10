@@ -6,17 +6,16 @@
 # 'jekyll serve'. If you change this file, please restart the server process.
 
 # Site settings
-title: atelier NZML # ex. I m Chuan
-name: atelierNZML # ex. DONGChuan
+title: atelier NZML 
+name: atelierNZML 
 email: hogehoge@example.com
-favicon: favicon.png # Image must be in assets/images
-repository: atelierNZML/atelier-nzml.github.io # ex. DONGChuan/DONGChuan.github.io
+repository: atelierNZML/atelier-nzml.github.io 
 
 # The base hostname & protocol for your site
 # For local test, please use http://localhost:4000
 # For production, use your github page url. ex. http://dongchuan.github.io
 # url: http://localhost:4000
-url: http://ateliernzml.github.io
+url: https://ateliernzml.github.io
 
 ## Gem
 gems:
