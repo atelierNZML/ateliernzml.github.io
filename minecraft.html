@@ -49,7 +49,7 @@ css: ['minecraft.css', 'nazoml.css']
 </div>
 
 <div id="postData" class="d-none">
-    {% assign posts = site.posts | where_exp: 'post', 'post.path contains "minecraft"' %}
+    {% assign posts = site.posts | where_exp: 'post', 'post.path contains "minecraft/"' %}
     {{ posts | jsonify }}
 </div>
 <script type="text/javascript" src="/assets/js/minecraft.js"></script>
