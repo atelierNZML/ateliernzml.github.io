@@ -23,7 +23,7 @@ css: ['nazoml.css', 'sidebar-popular-repo.css']
     <div class="pb-1">
         <h1 class="text-center">今週のNAZO</h1>
     </div>
-    {% assign nazo_posts = site.posts | where_exp: 'post', 'post.path contains "nazo"' %}
+    {% assign nazo_posts = site.posts | where_exp: 'post', 'post.path contains "nazo/"' %}
     {% for post in nazo_posts limit: 1 %}
     <div class="d-flex justify-content-center">
         <img class="new-nazo-img" src="{{ post.img_url }}" />

@@ -47,7 +47,7 @@ css: ['index.css', 'link-card.css']
                 <div class="py-3">
                     {% for post in site.posts limit: 3 %}
                     <div class="d-flex justify-content-center">
-                        <div class="news-item d-flex justify-content-between">
+                        <div class="news-item d-md-flex justify-content-between d-block">
                             <div class="news-title">「{{ post.title }}」を投稿しました。</div>
                             <a href="{{ site.url }}{{ post.url }}" class="">Show more <i class="fa-solid fa-arrow-right"></i></a>
                         </div>
