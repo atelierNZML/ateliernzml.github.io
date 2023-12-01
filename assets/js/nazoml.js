@@ -1,11 +1,29 @@
 $(function() {
     const postsJson = $('#postData').text();
-    const posts = JSON.parse(postsJson);
+    let posts = JSON.parse(postsJson);
     let url = new URL(window.location.href);
     let params = url.searchParams;
+
+    let difficulty = params.get('difficulty') || 'all';
+    if (difficulty == 'all') {
+        $('.filter-btn[data-filtername="all"]').addClass('active').addClass('disable').prop('disable', true);
+    } else {
+        $('.filter-btn[data-filtername="difficulty-'+difficulty+'"]').addClass('active').addClass('disable').prop('disable', true);
+        posts = posts.filter(function(post) {
+            return post.difficulty == difficulty;
+        })
+    }
+
+    if (posts.length < 1) {
+        console.log('hoge')
+        $('#nazoNotFound').show();
+        return;
+    }
+
     const perPage = params.get('per') || 12;
     const maxPages = Math.ceil(posts.length / perPage);
     let currentPage = params.get('page') || 1;
+
     if (currentPage > maxPages) {
         currentPage = maxPages;
     }

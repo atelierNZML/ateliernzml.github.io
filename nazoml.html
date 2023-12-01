@@ -41,7 +41,7 @@ css: ['nazoml.css', 'sidebar-popular-repo.css']
     <div class="py-3 container d-flex justify-content-center">
         <div class="recent-post-list">
             
-            {% for post in nazo_posts offset: 1 limit: 5 %}
+            {% for post in nazo_posts offset: 0 limit: 5 %}
             <a href="{{ site.url }}{{ post.url }}" class="post-card mb-1">
                 <div class="text-center post-img-holder">
                     <img class="post-img" src="{{ post.img_url }}" alt="謎" />
@@ -66,10 +66,11 @@ css: ['nazoml.css', 'sidebar-popular-repo.css']
 <section id="extraInfo" class="extra-info-section py-3">
     <div class="container d-flex justify-content-center">
         <div class="row w-100">
+            <!--
             <div class="col-12 col-md-8">
-    
             </div>
-            <div class="col-12 col-md-4">
+            -->
+            <div class="col-12 col-md-4 offset-md-4">
                 <h3>
                     Xでも謎を投稿しています<br>
                     ぜひフォローしてください！

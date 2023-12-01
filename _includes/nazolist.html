@@ -14,9 +14,50 @@
 </section>
 <div class="nazo-list container" style="padding-top: 120px;">
     <h3 class="px-2">NAZO一覧</h3>
+    <div class="py-3 d-flex">
+        <a href="/nazolist" class="btn btn-outline-secondary filter-btn" data-filtername="all">全て</a>
+        <a href="/nazolist?difficulty=5" class="btn btn-outline-secondary filter-btn" data-filtername="difficulty-5">
+            <i class="fa-solid fa-star"></i>
+            <i class="fa-solid fa-star"></i>
+            <i class="fa-solid fa-star"></i>
+            <i class="fa-solid fa-star"></i>
+            <i class="fa-solid fa-star"></i>
+        </a>
+        <a href="/nazolist?difficulty=4" class="btn btn-outline-secondary filter-btn" data-filtername="difficulty-4">
+            <i class="fa-solid fa-star"></i>
+            <i class="fa-solid fa-star"></i>
+            <i class="fa-solid fa-star"></i>
+            <i class="fa-solid fa-star"></i>
+            <i class="fa-regular fa-star"></i>
+        </a>
+        <a href="/nazolist?difficulty=3" class="btn btn-outline-secondary filter-btn" data-filtername="difficulty-3">
+            <i class="fa-solid fa-star"></i>
+            <i class="fa-solid fa-star"></i>
+            <i class="fa-solid fa-star"></i>
+            <i class="fa-regular fa-star"></i>
+            <i class="fa-regular fa-star"></i>
+        </a>
+        <a href="/nazolist?difficulty=2" class="btn btn-outline-secondary filter-btn" data-filtername="difficulty-2">
+            <i class="fa-solid fa-star"></i>
+            <i class="fa-solid fa-star"></i>
+            <i class="fa-regular fa-star"></i>
+            <i class="fa-regular fa-star"></i>
+            <i class="fa-regular fa-star"></i>
+        </a>
+        <a href="/nazolist?difficulty=1" class="btn btn-outline-secondary filter-btn" data-filtername="difficulty-1">
+            <i class="fa-solid fa-star"></i>
+            <i class="fa-regular fa-star"></i>
+            <i class="fa-regular fa-star"></i>
+            <i class="fa-regular fa-star"></i>
+            <i class="fa-regular fa-star"></i>
+        </a>
+    </div>
     <div class="row py-3">
         <div class="py-3">
             <div id="nazoPostList" class="post-list">
+                <div id="nazoNotFound" class="no-data w-100 text-center" style="display: none;">
+                    NAZOが見つかりませんでした
+                </div>
             </div>
         </div>
         <div id="nazoPagination" class="d-flex justify-content-center"></div>
@@ -24,7 +65,7 @@
 </div>
 
 <div id="postData" class="d-none">
-    {% assign nazo_posts = site.posts | where_exp: 'post', 'post.path contains "nazo"' %}
+    {% assign nazo_posts = site.posts | where_exp: 'post', 'post.path contains "nazo/"' %}
     {{ nazo_posts | jsonify }}
 </div>
 <script type="text/javascript" src="/assets/js/nazoml.js"></script>

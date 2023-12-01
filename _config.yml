@@ -52,10 +52,6 @@ paginate_path: 'page:num'
 # Navigation. If you do not like these modules, just remove them :D
 navs:
   -
-    href: /
-    label: Home
-    icon: <i class="fa-solid fa-house"></i>
-  -
     href: /about
     label: About
     icon: <i class="fa-regular fa-user-circle"></i>

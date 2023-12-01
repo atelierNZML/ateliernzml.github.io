@@ -52,10 +52,13 @@ css: ['post.css']
         <div class="answer">
             <details class="details nazo-answer">
                 <summary class="details-summary">答え</summary>
-                <p class="details-content">
-                    {{ page.answer }}
-                    {{ content }}
-                </p>
+                <div class="details-content">
+                    <h3>{{ page.answer }}</h3>
+                    <p>
+                        {{ page.explanation }}
+                        {{ content }}
+                    </p>
+                </div>
             </details>
         </div>
     </div>

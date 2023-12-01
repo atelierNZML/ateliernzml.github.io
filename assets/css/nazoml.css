@@ -21,3 +21,8 @@
     white-space: nowrap;
     width: 100%;
 }
+
+.filter-btn {
+    display: block;
+    margin-right: 4px;
+}

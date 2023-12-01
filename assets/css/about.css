@@ -2,11 +2,22 @@
     background: #0c92ff;
 }
 
+.title-col {
+  font-size: 20px;
+  font-weight: bold;
+  min-width: 170px;
+}
+
+.content-col {
+  font-size: 16px;
+  min-width: 300px;
+}
+
 .mt40 {
     margin-top: 40px !important; }
 
 .page_style01{
-    font-size: 18px;
+  font-size: 18px;
   font-size: 1.8rem;
 }
 
