@@ -15,7 +15,6 @@ $(function() {
     }
 
     if (posts.length < 1) {
-        console.log('hoge')
         $('#nazoNotFound').show();
         return;
     }
