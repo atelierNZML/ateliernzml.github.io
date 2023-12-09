@@ -1,21 +1,96 @@
 ---
 layout: default
-css: ['post_minecraft.css']
+css: ['common.css', 'post_minecraft.css']
+js:  ['minecraft-post.js']
 ---
 <div class="post container" style="padding-top: 120px;">
-    <div class="my-3">
-        <a class="bordered-btn" href="{{ site.url }}/minecraft"><i class="fa-solid fa-angles-left"></i>&nbsp;一覧に戻る</a>
+    <div class="my-4 d-flex justify-content-between">
+        <div>
+            <a class="bordered-btn" href="{{ site.url }}/minecraft"><i class="fa-solid fa-angles-left"></i>&nbsp;一覧に戻る</a>
+        </div>
+        <div>
+            <a href="#en" class="show-in-ja change-to-en-btn bordered-btn">English</a>
+            <a href="#ja" class="show-in-en change-to-ja-btn bordered-btn">日本語</a>
+        </div>
     </div>
     <div class="nazo-header d-flex justify-content-start align-items-end">
         <div class="nazo-title me-3">
-            {{ page.title }} 
+            <h2 class="m-0">{{ page.title }} </h2>
         </div>
-        <div class="post-date">
+        <div class="post-date text-secondary">
             ({{ page.date | date: "%Y/%m/%d" }})
         </div>
     </div>
 
-    <div class="nazo-content my-3 d-flex justify-content-center">
-        <img class="nazo-img" src="{{ page.img_url1 }}" />
+    <div class="my-3 row">
+        <div class="col-12 col-md-6">
+            <div class="d-flex justify-content-center nazo-img mb-3">
+                <img class="nazo-main-img click-to-expand-img" src="{{ page.img_url1 }}" />
+            </div>
+            {% if page.img_url2 != nil %}
+            <div class="d-flex justify-content-between nazo-img">
+                <img class="nazo-sub-img click-to-expand-img" src="{{ page.img_url2 }}" />
+                {% if page.img_url3 != nil %}
+                <img class="nazo-sub-img click-to-expand-img" src="{{ page.img_url3 }}" />
+                {% endif %}
+                {% if page.img_url4 != nil %}
+                <img class="nazo-sub-img click-to-expand-img" src="{{ page.img_url4 }}" />
+                {% endif %}
+            </div>
+            {% endif %}
+        </div>
+        <div class="col-12 col-md-6 py-2 px-3">
+            <div class="description mb-3">
+                <div class="show-in-ja">
+                    <p class="raw-text">{{ page.description }}</p>
+                </div>
+                <div class="show-in-en">
+                    <p class="raw-text">{{ page.description_en }}</p>
+                </div>
+            </div>
+            <div class="map-info">
+                <table class="table">
+                    <tr>
+                        <td><span class="show-in-ja">難易度</span><span class="show-in-en">Difficulty</span></td>
+                        <td>
+                            {% if page.difficulty > 5 %}
+                                {% for _ in (1..5) %}
+                                    <i class="fa-solid fa-star"></i> 
+                                {% endfor %}
+                                {% for _ in (6..page.difficulty) %}
+                                    <i class="fa-solid fa-star text-danger"></i>
+                                {% endfor %}
+                            {% else %}
+                                {% for _ in (1..page.difficulty) %}
+                                    <i class="fa-solid fa-star"></i> 
+                                {% endfor %}
+                                {% for _ in (page.difficulty..4) %}
+                                    <i class="fa-regular fa-star"></i>
+                                {% endfor %}
+                            {% endif %}
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><span class="show-in-ja">対応バージョン</span><span class="show-in-en">Version</span></td>
+                        <td>{{ page.version }}</td>
+                    </tr>
+                    <tr>
+                        <td><span class="show-in-ja">推奨プレイヤー人数</span><span class="show-in-en">Players</span></td>
+                        <td><p class="raw-text">{{ page.players }}</p></td>
+                    </tr>
+                    <tr>
+                        <td><span class="show-in-ja">所要時間</span><span class="show-in-en">Required time</span></td>
+                        <td><p class="raw-text">{{ page.time_required }}</p></td>
+                    </tr>
+                </table>
+            </div>
+            <div class="download text-center">
+                <a href="{{ page.download_url }}" class="btn btn-success download-btn" target="_blank" rel="noopener noreferrer">
+                    <span class="show-in-ja">配布マップをダウンロード</span><span class="show-in-en">Download</span>&nbsp;<i class="fa-solid fa-up-right-from-square"></i>
+                </a>
+            </div>
+        </div>
     </div>
 </div>
+
+{% include image_modal.html %}

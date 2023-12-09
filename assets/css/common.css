@@ -4,6 +4,11 @@
     font-family: "M PLUS Rounded 1c", "Nunito Sans", sans-serif;
 }
 
+.raw-text {
+    white-space: pre-wrap;
+    margin: 0;
+}
+
 /** Header **/
 .site-header{
     width: 100%;
@@ -277,4 +282,9 @@
 .bordered-btn:hover {
     background-color: #eee;
     color: #333;
+}
+
+.click-to-expand-img:hover {
+    cursor: pointer;
+    opacity: 0.8;
 }

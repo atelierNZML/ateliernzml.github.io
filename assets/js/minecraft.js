@@ -27,7 +27,7 @@ $(function() {
         let cardElem = $('<a class="post-card minecraft mb-1"></a>').attr('href', post.url);
         
         let imgHolder = $('<div class="text-center post-img-holder"></div>');
-        let nazoImg = $('<img class="post-img" alt="NAZO"/>').attr('src', post.img_url);
+        let nazoImg = $('<img class="post-img" alt="NAZO"/>').attr('src', post.img_url1);
         imgHolder.append(nazoImg)
         
         let cardTitleElem = $('<div class="post-list-title card-title"></div>');

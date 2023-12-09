@@ -1,0 +1,23 @@
+
+.nazo-img {
+    width: 100%;
+    max-width: 700px;
+}
+
+.nazo-main-img {
+    width: 100%;
+}
+
+.nazo-sub-img {
+    min-width: 30%;
+    max-width: 50%;
+    margin-right: 8px;
+    flex: 1;
+}
+.nazo-sub-img:last-child {
+    margin: 0;
+}
+
+.download-btn {
+    padding: 12px 36px;
+}
