@@ -1,8 +1,19 @@
 $(function() {
     const postsJson = $('#postData').text();
-    const posts = JSON.parse(postsJson);
+    let posts = JSON.parse(postsJson);
     let url = new URL(window.location.href);
     let params = url.searchParams;
+    setDefaultValue();
+
+    posts = posts.filter(function(post) {
+        return filterCondition(post);
+    })
+
+    if (posts.length < 1) {
+        $('#mapNotFound').show();
+        return;
+    }
+
     const perPage = params.get('per') || 12;
     const maxPages = Math.ceil(posts.length / perPage);
     let currentPage = params.get('page') || 1;
@@ -87,10 +98,49 @@ $(function() {
     }
     
     function getPageHref(page_num) {
+        const queryParams = new URLSearchParams(window.location.search);
         let href = location.pathname + '?page=' + page_num;
         if (params.get('per')) {
             href = href + '&per=' + perPage;
         }
+        for (const[key, value] of queryParams) {
+            href = href + '&' + key + '=' + value;
+        }
         return href
     }
 });
+
+function setDefaultValue() {
+    const queryParams = new URLSearchParams(window.location.search);
+    for (const[key, value] of queryParams) {
+        $('[name="'+escapeSelector(key)+'"]').val(value);
+    }
+}
+
+function filterCondition(post) {
+    let url = new URL(window.location.href);
+    const params = url.searchParams;
+    const difficulty = params.get('diffuculty') || '';
+    const players = params.get('players') || '';
+    const keyword = params.get('kwd') || '';
+    const keywords = keyword.split(' ');
+
+    let difficulty_condition = post.difficulty == difficulty || difficulty == '';
+    let players_condition = post.players.startsWith(players) || players == '';
+
+    let keyword_condition = true;
+    let categories = post.categories.join('');
+    let title = post.title;
+    for (const kwd of keywords) {
+        if (categories.includes(kwd) || title.includes(kwd)) {
+            keyword_condition = true;
+            break;
+        }
+    };
+
+    return difficulty_condition && players_condition && keyword_condition;
+}
+
+function escapeSelector(selector) {
+    return selector.replace(/[!"#$%&'()*+,.\/:;<=>?@[\\\]^`{|}~]/g, "\\$&");
+}

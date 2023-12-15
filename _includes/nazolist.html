@@ -16,41 +16,16 @@
     <h3 class="px-2">NAZO一覧</h3>
     <div class="py-3 d-flex">
         <a href="/nazolist" class="btn btn-outline-secondary filter-btn" data-filtername="all">全て</a>
-        <a href="/nazolist?difficulty=5" class="btn btn-outline-secondary filter-btn" data-filtername="difficulty-5">
+        {% for difficulty in (1..5) %}
+        <a href="/nazolist?difficulty={{ difficulty }}" class="btn btn-outline-secondary filter-btn" data-filtername="difficulty-{{ difficulty }}">
+            {% for _ in (1..difficulty) %}
             <i class="fa-solid fa-star"></i>
-            <i class="fa-solid fa-star"></i>
-            <i class="fa-solid fa-star"></i>
-            <i class="fa-solid fa-star"></i>
-            <i class="fa-solid fa-star"></i>
+            {% endfor %}
+            {% for _ in (difficulty..4) %}
+            <i class="fa-regular fa-star"></i>
+            {% endfor %}
         </a>
-        <a href="/nazolist?difficulty=4" class="btn btn-outline-secondary filter-btn" data-filtername="difficulty-4">
-            <i class="fa-solid fa-star"></i>
-            <i class="fa-solid fa-star"></i>
-            <i class="fa-solid fa-star"></i>
-            <i class="fa-solid fa-star"></i>
-            <i class="fa-regular fa-star"></i>
-        </a>
-        <a href="/nazolist?difficulty=3" class="btn btn-outline-secondary filter-btn" data-filtername="difficulty-3">
-            <i class="fa-solid fa-star"></i>
-            <i class="fa-solid fa-star"></i>
-            <i class="fa-solid fa-star"></i>
-            <i class="fa-regular fa-star"></i>
-            <i class="fa-regular fa-star"></i>
-        </a>
-        <a href="/nazolist?difficulty=2" class="btn btn-outline-secondary filter-btn" data-filtername="difficulty-2">
-            <i class="fa-solid fa-star"></i>
-            <i class="fa-solid fa-star"></i>
-            <i class="fa-regular fa-star"></i>
-            <i class="fa-regular fa-star"></i>
-            <i class="fa-regular fa-star"></i>
-        </a>
-        <a href="/nazolist?difficulty=1" class="btn btn-outline-secondary filter-btn" data-filtername="difficulty-1">
-            <i class="fa-solid fa-star"></i>
-            <i class="fa-regular fa-star"></i>
-            <i class="fa-regular fa-star"></i>
-            <i class="fa-regular fa-star"></i>
-            <i class="fa-regular fa-star"></i>
-        </a>
+        {% endfor %}
     </div>
     <div class="row py-3">
         <div class="py-3">
