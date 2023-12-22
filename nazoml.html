@@ -40,8 +40,7 @@ css: ['nazoml.css', 'sidebar-popular-repo.css']
     </div>
     <div class="py-3 container d-flex justify-content-center">
         <div class="recent-post-list">
-            
-            {% for post in nazo_posts offset: 0 limit: 5 %}
+            {% for post in nazo_posts offset: 1 limit: 5 %}
             <a href="{{ site.url }}{{ post.url }}" class="post-card mb-1">
                 <div class="text-center post-img-holder">
                     <img class="post-img" src="{{ post.img_url }}" alt="謎" />
