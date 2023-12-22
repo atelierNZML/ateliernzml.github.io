@@ -42,8 +42,6 @@
     height: 60px;
 }
 
-.site-header-nav{
-}
 
 .site-header{
     color: #333;
@@ -68,6 +66,92 @@
 .site-header-nav-item.selected {
     color: #333;
     border-bottom: 3px solid #333;
+}
+
+.header__nav {
+    position: absolute;
+    right: 0;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100vh;
+    transform: translateX(100%);
+    background-color: #fff;
+    transition: ease .4s;
+}
+
+.nav-items {
+    margin-top: 18px;
+    padding: 0;
+    list-style: none;
+    
+}
+
+.nav-items__item a {
+    color: black;
+    width: 100%;
+    display: block;
+    font-size: 20px;
+    margin-bottom: 24px;
+    text-decoration: none;
+}
+
+.nav-items__item:last-child a {
+    margin-bottom: 0;
+}
+
+/******* Hamburger Menu *******/
+
+.header-hamburger {
+    width: 40px;
+    height: 100%;
+}
+
+.hamburger {
+    background-color: transparent;
+    border-color: transparent;
+    z-index: 9999;
+}
+
+.hamburger span {
+    width: 100%;
+    height: 2px;
+    background-color: #000;
+    position: relative;
+    transition: ease .4s;
+    display: block;
+}
+
+.hamburger span:nth-child(1) {
+    top: 0;
+}
+
+.hamburger span:nth-child(2) {
+    margin: 8px 0;
+}
+
+.hamburger span:nth-child(3) {
+    top: 0;
+}
+
+
+/* ハンバーガーメニュークリック後のスタイル */
+.header__nav.active {
+    transform: translateX(0);
+}
+
+.hamburger.active span:nth-child(1) {
+    top: 7px;
+    transform: rotate(45deg);
+}
+
+.hamburger.active span:nth-child(2) {
+    opacity: 0;
+}
+
+.hamburger.active span:nth-child(3) {
+    top: -13px;
+    transform: rotate(-45deg);
 }
 
 /******* Scroll Start *******/
@@ -221,6 +305,9 @@
 }
 
 @media screen and (max-width: 767px) {
+    .jumbotron-wrapper {
+        padding: 0;
+    }
     .post-list {
         flex-direction: column;
     }
@@ -287,4 +374,23 @@
 .click-to-expand-img:hover {
     cursor: pointer;
     opacity: 0.8;
+}
+
+.badge {
+    font-size: 14px;
+}
+
+.bg-nazo {
+    background-color: #7952b3 !important;
+    color: #fff;
+}
+
+.bg-minecraft {
+    background-color: #11BF6B !important;
+    color: #fff;
+}
+
+.bg-lynx {
+    background-color: #23B7E8 !important;
+    color: #fff;
 }

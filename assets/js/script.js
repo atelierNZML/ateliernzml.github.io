@@ -52,5 +52,13 @@ $( document ).ready(function() {
     });
     $('[data-dismiss="modal"]').on('click', function() {
         $(this).closest('.modal').modal('hide');
-    })
+    });
+
+    const ham = $('#js-hamburger');
+    const nav = $('#js-nav');
+
+    ham.on('click', function () {
+        ham.toggleClass('active');
+        nav.toggleClass('active');
+    });
 });

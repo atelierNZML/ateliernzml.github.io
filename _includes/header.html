@@ -1,19 +1,46 @@
 <header class="site-header py-1 py-md-2">
-    <div class="container d-block d-md-flex justify-content-between">
+    <div class="container d-flex justify-content-between">
         <div>
             <a id="site-header-brand" href="/" title="{{ site.name }}">
                 <img src="/assets/images/header-logo.png" class="header-logo" />
             </a>
         </div>
-        <nav class="site-header-nav d-block" role="navigation">
-            {% for nav in site.navs %}
-            <a href="{{ nav.href }}"
-               class="{% if page.menu == nav.label %} selected disabled {% endif %} site-header-nav-item hvr-underline-from-center"
-               target="{{ nav.target | default: _self }}"
-               title="{{ nav.label }}">
-               {{ nav.label }}
-            </a>
-            {% endfor %}
-        </nav>
+        <div class="menu d-flex align-items-center">
+            <nav class="site-header-nav d-none d-md-block" role="navigation">
+                {% for nav in site.navs %}
+                <a href="{{ nav.href }}"
+                   class="{% if page.menu == nav.label %} selected disabled {% endif %} site-header-nav-item hvr-underline-from-center"
+                   target="{{ nav.target | default: _self }}"
+                   title="{{ nav.label }}">
+                   {{ nav.label }}
+                </a>
+                {% endfor %}
+            </nav>
+
+            <div class="d-block d-md-none h-100">
+                <nav class="header__nav nav" id="js-nav">
+                    <div class="d-flex flex-column align-items-center justify-content-center w-100">
+                        <img src="/assets/images/header-logo.png" class="header-logo" />
+                        <ul class="nav-items">
+                            {% for nav in site.navs %}
+                            <li class="nav-items__item">
+                                <a href="{{ nav.href }}"
+                                    class="{% if page.menu == nav.label %} selected disabled {% endif %}"
+                                    target="{{ nav.target | default: _self }}"
+                                    title="{{ nav.label }}">
+                                    <i class="fa-solid fa-chevron-right"></i>&nbsp;{{ nav.label }}
+                                </a>
+                            </li>
+                            {% endfor %}
+                        </ul>
+                    </div>
+                </nav>
+                <button class="header-hamburger hamburger" id="js-hamburger">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </div>
+        </div>
     </div>
 </header>
