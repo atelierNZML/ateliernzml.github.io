@@ -46,7 +46,7 @@ css: ['index.css', 'link-card.css']
                 <h3>News</h3>
                 <div class="py-3">
                     {% for post in site.posts limit: 3 %}
-                    <div class="d-flex justify-content-center">
+                    <div class="d-flex justify-content-start">
                         <a href="{{ post.url }}" class="news-item d-block">
                         <div class="justify-content-between align-items-center d-flex">
                             <div class="news-title">
@@ -67,7 +67,7 @@ css: ['index.css', 'link-card.css']
             </div>
             <div class="col-12 col-md-4">
                 <h3>
-                    Ｘでも活動しています。<br>
+                    <i class="fa-brands fa-x-twitter"></i>でも活動しています。<br>
                     ぜひフォローしてください！
                 </h3>
                 <div class="py-3">
