@@ -1,6 +1,6 @@
 ---
 layout: default
-title: NaZoML
+title: Atelier NZML - Nazo
 menu: NaZoML
 subtitle: ''
                             

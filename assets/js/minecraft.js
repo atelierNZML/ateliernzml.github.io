@@ -7,7 +7,11 @@ $(function() {
 
     posts = posts.filter(function(post) {
         return filterCondition(post);
-    })
+    });
+
+    if (isFilterOn()) {
+        $('#filterBtn').removeClass('btn-outline-secondary').addClass('btn-outline-success').html('<i class="fa-solid fa-filter"></i> 絞り込み中');
+    }
 
     if (posts.length < 1) {
         $('#mapNotFound').show();
@@ -117,10 +121,19 @@ function setDefaultValue() {
     }
 }
 
+function isFilterOn() {
+    let url = new URL(window.location.href);
+    const params = url.searchParams;
+    const difficulty = params.get('difficulty') || '';
+    const players = params.get('players') || '';
+    const keyword = params.get('kwd') || '';
+    return difficulty != '' || players != '' || keyword != ''
+}
+
 function filterCondition(post) {
     let url = new URL(window.location.href);
     const params = url.searchParams;
-    const difficulty = params.get('diffuculty') || '';
+    const difficulty = params.get('difficulty') || '';
     const players = params.get('players') || '';
     const keyword = params.get('kwd') || '';
     const keywords = keyword.split(' ');
@@ -128,7 +141,7 @@ function filterCondition(post) {
     let difficulty_condition = post.difficulty == difficulty || difficulty == '';
     let players_condition = post.players.startsWith(players) || players == '';
 
-    let keyword_condition = true;
+    let keyword_condition = false;
     let categories = post.categories.join('');
     let title = post.title;
     for (const kwd of keywords) {

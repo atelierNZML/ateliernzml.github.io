@@ -1,6 +1,6 @@
 ---
 layout: default
-title: NZMLyNx
+title: Atelier NZML - Links
 menu: NZMLyNx
 css: ['nzmlynx.css']
 ---
