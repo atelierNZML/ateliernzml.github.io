@@ -27,7 +27,7 @@ css: ['nazoml.css', 'sidebar-popular-repo.css']
     {% assign nazo_posts = site.posts | where_exp: 'post', 'post.path contains "nazo/"' %}
     {% for post in nazo_posts limit: 1 %}
     <div class="d-flex justify-content-center">
-        <img class="new-nazo-img" src="{{ post.img_url }}" />
+        <img class="new-nazo-img" src="https://drive.google.com/uc?export=view&id={{ post.img_id }}" onerror="this.src='https://lh3.google.com/u/0/d/{{ post.img_id }}';" alt="謎" />
     </div>
     <div class="text-center">
         <a href="{{ site.url }}{{ post.url }}" class="new-nazo-link">NAZOの詳細ページへ&nbsp;<i class="fa-solid fa-angles-right"></i></a>
@@ -44,7 +44,7 @@ css: ['nazoml.css', 'sidebar-popular-repo.css']
             {% for post in nazo_posts offset: 1 limit: 5 %}
             <a href="{{ site.url }}{{ post.url }}" class="post-card mb-1">
                 <div class="text-center post-img-holder">
-                    <img class="post-img" src="{{ post.img_url }}" alt="謎" />
+                <img class="post-img" src="https://drive.google.com/uc?export=view&id={{ post.img_id }}" onerror="this.src='https://lh3.google.com/u/0/d/{{ post.img_id }}';" alt="謎" />
                 </div>
                 <div class="post-list-title card-title">
                     <p class="post-date">

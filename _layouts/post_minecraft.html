@@ -25,16 +25,16 @@ js:  ['minecraft-post.js']
     <div class="my-3 row">
         <div class="col-12 col-md-6">
             <div class="d-flex justify-content-center nazo-img mb-3">
-                <img class="nazo-main-img click-to-expand-img" src="{{ page.img_url1 }}" />
+                <img class="nazo-main-img click-to-expand-img" src="https://drive.google.com/uc?export=view&id={{ post.img_id1 }}" onerror="this.src='https://lh3.google.com/u/0/d/{{ post.img_id1 }}';" />
             </div>
-            {% if page.img_url2 != nil %}
+            {% if page.img_id2 != nil %}
             <div class="d-flex justify-content-between nazo-img">
-                <img class="nazo-sub-img click-to-expand-img" src="{{ page.img_url2 }}" />
-                {% if page.img_url3 != nil %}
-                <img class="nazo-sub-img click-to-expand-img" src="{{ page.img_url3 }}" />
+                <img class="nazo-sub-img click-to-expand-img" src="https://drive.google.com/uc?export=view&id={{ post.img_id2 }}" onerror="this.src='https://lh3.google.com/u/0/d/{{ post.img_id2 }}';" />
+                {% if page.img_id3 != nil %}
+                <img class="nazo-sub-img click-to-expand-img" src="https://drive.google.com/uc?export=view&id={{ post.img_id3 }}" onerror="this.src='https://lh3.google.com/u/0/d/{{ post.img_id3 }}';" />
                 {% endif %}
-                {% if page.img_url4 != nil %}
-                <img class="nazo-sub-img click-to-expand-img" src="{{ page.img_url4 }}" />
+                {% if page.img_id4 != nil %}
+                <img class="nazo-sub-img click-to-expand-img" src="https://drive.google.com/uc?export=view&id={{ post.img_id4 }}" onerror="this.src='https://lh3.google.com/u/0/d/{{ post.img_id4 }}';" />
                 {% endif %}
             </div>
             {% endif %}
