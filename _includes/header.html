@@ -8,12 +8,14 @@
         <div class="menu d-flex align-items-center">
             <nav class="site-header-nav d-none d-md-block" role="navigation">
                 {% for nav in site.navs %}
-                <a href="{{ nav.href }}"
-                   class="{% if page.menu == nav.label %} selected disabled {% endif %} site-header-nav-item hvr-underline-from-center"
-                   target="{{ nav.target | default: _self }}"
-                   title="{{ nav.label }}">
-                   {{ nav.label }}
-                </a>
+                    <a href="{{ nav.href }}"
+                        class="{% if page.menu == nav.label %} selected disabled {% endif %} site-header-nav-item hvr-underline-from-center"
+                        target="{{ nav.target | default: _self }}"
+                        title="{{ nav.label }}">
+                        {{ nav.label }}
+                        <div class="header-nav-underline"></div>
+                    </a>
+
                 {% endfor %}
             </nav>
 

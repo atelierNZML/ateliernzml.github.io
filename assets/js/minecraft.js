@@ -1,5 +1,5 @@
 $(function() {
-    const postsJson = $('#postData').text();
+    const postsJson = $('#minecraftPostData').text();
     let posts = JSON.parse(postsJson);
     let url = new URL(window.location.href);
     let params = url.searchParams;
