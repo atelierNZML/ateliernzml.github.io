@@ -1,7 +1,7 @@
 ---
 layout: default
 title: Atelier NZML - Nazo
-menu: NaZoML
+menu: 謎解き
 css: ['nazoml.css', 'sidebar-popular-repo.css']
 ---
 <section class="jumbotron-wrapper">
@@ -9,9 +9,9 @@ css: ['nazoml.css', 'sidebar-popular-repo.css']
         <div class="jumbotron">
             <div class="container">
                 <div class="jumbotron-content">
-                    <h1 class="fw-bold">NaZoML</h1>
+                    <h1 class="fw-bold">NaZoMLプロジェクト</h1>
                     <div id="jumbotron-meta-info">
-                        謎解き問題を投稿します。<br>
+                        毎週金曜日に謎解き問題を投稿します。<br>
                         ヒントなしで解けたらすごい！
                     </div>
                 </div>
@@ -20,19 +20,18 @@ css: ['nazoml.css', 'sidebar-popular-repo.css']
     </div>
 </section>
 
+{% assign nazo_posts = site.posts | where_exp: 'post', 'post.path contains "nazo/"' %}
+{% assign latest_post = nazo_posts | first %}
 <section id="newNazo" class="new-nazo-section content py-3">
     <div class="pb-1">
-        <h1 class="text-center">今週のNAZO</h1>
+        <h1 class="text-center">今週のNAZO<span style="font-size: 18px; color: #333; margin-left: 4px;">({{ latest_post.date | date: "%Y/%m/%d" }}更新)</span></h1>
     </div>
-    {% assign nazo_posts = site.posts | where_exp: 'post', 'post.path contains "nazo/"' %}
-    {% for post in nazo_posts limit: 1 %}
     <div class="d-flex justify-content-center">
-        <img class="new-nazo-img" src="https://drive.google.com/uc?export=view&id={{ post.img_id }}" onerror="this.src='https://lh3.google.com/u/0/d/{{ post.img_id }}';" alt="謎" />
+        <img class="new-nazo-img" src="https://drive.google.com/uc?export=view&id={{ latest_post.img_id }}" onerror="this.src='https://lh3.google.com/u/0/d/{{ latest_post.img_id }}';" alt="謎" />
     </div>
     <div class="text-center">
-        <a href="{{ site.url }}{{ post.url }}" class="new-nazo-link">NAZOの詳細ページへ&nbsp;<i class="fa-solid fa-angles-right"></i></a>
+        <a href="{{ site.url }}{{ latest_post.url }}" class="new-nazo-link">NAZOの詳細ページへ&nbsp;<i class="fa-solid fa-angles-right"></i></a>
     </div>
-    {% endfor %}
 </section>
 
 <section id="recentNazo" class="content py-3">
@@ -41,6 +40,7 @@ css: ['nazoml.css', 'sidebar-popular-repo.css']
     </div>
     <div class="py-3 container d-flex justify-content-center">
         <div class="recent-post-list">
+            
             {% for post in nazo_posts offset: 1 limit: 5 %}
             <a href="{{ site.url }}{{ post.url }}" class="post-card mb-1">
                 <div class="text-center post-img-holder">

@@ -1,7 +1,7 @@
 ---
 layout: default
 title: Atelier NZML - Links
-menu: NZMLyNx
+menu: その他活動
 css: ['nzmlynx.css']
 ---
 {% include nzmlynx.html %}

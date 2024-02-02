@@ -57,7 +57,7 @@ navs:
     icon: <i class="fa-regular fa-user-circle"></i>
   -
     href: /nazoml
-    label: NaZoML
+    label: 謎解き
     icon: <i class="fa-regular fa-circle-question"></i>
   -
     href: /minecraft
@@ -65,7 +65,7 @@ navs:
     icon: <i class="fa-solid fa-gamepad"></i>
   -
     href: /nzmlynx
-    label: NZMLyNx
+    label: その他活動
     icon: <i class="fa-solid fa-globe"></i>
 
 
