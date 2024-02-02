@@ -246,6 +246,7 @@
 }
 .post-card.minecraft {
     max-width: 350px;
+    height: 380px;
 }
 
 .post-card .post-img{
