@@ -191,7 +191,7 @@
 /** Jumbotron **/
 .jumbotron-wrapper {
     background: #272538;
-    padding: 0 30px;
+    /* padding: 0 30px; */
 }
 
 .jumbotron {

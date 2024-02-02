@@ -2,7 +2,7 @@
 layout: default
 title: Atelier NZML - Nazo
 menu: 謎解き
-css: ['nazoml.css', 'sidebar-popular-repo.css']
+css: ['nazoml.css']
 ---
 <section class="jumbotron-wrapper">
     <div class="jumbotron-img">
@@ -23,55 +23,59 @@ css: ['nazoml.css', 'sidebar-popular-repo.css']
 {% assign nazo_posts = site.posts | where_exp: 'post', 'post.path contains "nazo/"' %}
 {% assign latest_post = nazo_posts | first %}
 <section id="newNazo" class="new-nazo-section content py-3">
-    <div class="pb-1">
-        <h1 class="text-center">今週のNAZO<span style="font-size: 18px; color: #333; margin-left: 4px;">({{ latest_post.date | date: "%Y/%m/%d" }}更新)</span></h1>
-    </div>
-    <div class="d-flex justify-content-center">
-        <img class="new-nazo-img" src="https://drive.google.com/uc?export=view&id={{ latest_post.img_id }}" onerror="this.src='https://lh3.google.com/u/0/d/{{ latest_post.img_id }}';" alt="謎" />
-    </div>
-    <div class="text-center">
-        <a href="{{ site.url }}{{ latest_post.url }}" class="new-nazo-link">NAZOの詳細ページへ&nbsp;<i class="fa-solid fa-angles-right"></i></a>
+    <div class="new-nazo-container">
+        <div class="pb-1">
+            <h1 class="text-center">今週のNAZO<span style="font-size: 18px; color: #333; margin-left: 4px;">({{ latest_post.date | date: "%Y/%m/%d" }}更新)</span></h1>
+        </div>
+        <div class="d-flex justify-content-center">
+            <img class="new-nazo-img" src="https://drive.google.com/uc?export=view&id={{ latest_post.img_id }}" onerror="this.src='https://lh3.google.com/u/0/d/{{ latest_post.img_id }}';" alt="謎" />
+        </div>
+        <div class="text-center mt-1">
+            <a href="{{ site.url }}{{ latest_post.url }}" class="new-nazo-link">NAZOの詳細ページへ&nbsp;<i class="fa-solid fa-angles-right"></i></a>
+        </div>
     </div>
 </section>
 
 <section id="recentNazo" class="content py-3">
-    <div class="pb-1">
-        <h1 class="text-center">最近投稿したNAZO</h1>
-    </div>
-    <div class="py-3 container d-flex justify-content-center">
-        <div class="recent-post-list">
-            
-            {% for post in nazo_posts offset: 1 limit: 5 %}
-            <a href="{{ site.url }}{{ post.url }}" class="post-card mb-1">
-                <div class="text-center post-img-holder">
-                <img class="post-img" src="https://drive.google.com/uc?export=view&id={{ post.img_id }}" onerror="this.src='https://lh3.google.com/u/0/d/{{ post.img_id }}';" alt="謎" />
-                </div>
-                <div class="post-list-title card-title">
-                    <p class="post-date">
-                        {{ post.date | date: "%Y/%m/%d" }}
-                    </p>
-                    <p class="card-htitle">
-                        {{ post.title }}
-                    </p>
-                </div>
-            </a>
-            {% endfor %}
+    <div class="recent-nazo-container">
+        <div class="pb-1">
+            <h1 class="text-center">最近投稿したNAZO</h1>
         </div>
-    </div>
-    <div class="container px-4 d-flex justify-content-end">
-        <a class="bordered-btn" href="{{ site.url }}/nazolist">NAZOの一覧を見る</a>
+        <div class="py-3 px-4 container d-flex justify-content-center">
+            <div class="recent-post-list">
+                
+                {% for post in nazo_posts offset: 1 limit: 5 %}
+                <a href="{{ site.url }}{{ post.url }}" class="post-card mb-1">
+                    <div class="text-center post-img-holder">
+                    <img class="post-img" src="https://drive.google.com/uc?export=view&id={{ post.img_id }}" onerror="this.src='https://lh3.google.com/u/0/d/{{ post.img_id }}';" alt="謎" />
+                    </div>
+                    <div class="post-list-title card-title">
+                        <p class="post-date">
+                            {{ post.date | date: "%Y/%m/%d" }}
+                        </p>
+                        <p class="card-htitle">
+                            {{ post.title }}
+                        </p>
+                    </div>
+                </a>
+                {% endfor %}
+            </div>
+        </div>
+        <div class="container px-4 d-flex justify-content-end">
+            <a class="bordered-btn" href="{{ site.url }}/nazolist">NAZOの一覧を見る</a>
+        </div>
     </div>
 </section>
 
 <section id="extraInfo" class="extra-info-section py-3">
-    <div class="container d-flex justify-content-center">
+    <div class="container extra-info-container d-flex justify-content-center">
         <div class="row w-100">
             <!--
             <div class="col-12 col-md-8">
             </div>
             -->
             <div class="col-12 col-md-4 offset-md-4">
-                <h3>
+                <h3 style="color: #fff;">
                     Xでも謎を投稿しています<br>
                     ぜひフォローしてください！
                 </h3>

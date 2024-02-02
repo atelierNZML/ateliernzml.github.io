@@ -4,8 +4,17 @@
 }
 
 .new-nazo-section, .extra-info-section {
-    background-color: #F2F4FF;
+    background-color: #393f5f;
 }
+
+.new-nazo-container {
+    width: 95%;
+    max-width: 600px;
+    margin: auto;
+    background-color: #fff;
+    padding: 8px;
+}
+
 .new-nazo-img {
     width: 100%;
     max-width: 500px;
