@@ -18,7 +18,6 @@
 ※ Youtube動画の場合は、`_template/yyyy-mm-dd-nzmlynx_title.html`を`_post/nzmlynx/`にコピー
 
 ## TODO
-- nzmLyNx link design
 - SEO
 
 

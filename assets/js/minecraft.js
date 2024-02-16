@@ -44,7 +44,7 @@ $(function() {
         let imgHolder = $('<div class="text-center post-img-holder"></div>');
         let nazoImg = $('<img class="post-img" alt="MinecraftMap"/>')
             .attr('src', `https://drive.google.com/uc?id=${post.img_id1}`)
-            .attr('onerror', `this.src='https://lh3.google.com/u/0/d/${post.img_id1}'`);
+            .attr('onerror', `this.src='https://lh3.googleusercontent.com/d/${post.img_id1}'`);
         imgHolder.append(nazoImg)
         
         let cardTitleElem = $('<div class="post-list-title card-title"></div>');
