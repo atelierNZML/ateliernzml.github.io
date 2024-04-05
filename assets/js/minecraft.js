@@ -143,7 +143,7 @@ function filterCondition(post) {
     let difficulty_condition = post.difficulty == difficulty || difficulty == '';
     let players_condition = post.players.startsWith(players) || players == '';
 
-    let keyword_condition = false;
+    let keyword_condition = keyword == '';
     let categories = post.categories.join('');
     let title = post.title;
     for (const kwd of keywords) {
@@ -152,6 +152,8 @@ function filterCondition(post) {
             break;
         }
     };
+    console.log(post.difficulty)
+    console.log([difficulty_condition, players_condition, keyword_condition])
 
     return difficulty_condition && players_condition && keyword_condition;
 }

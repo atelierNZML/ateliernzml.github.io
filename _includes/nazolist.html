@@ -39,8 +39,21 @@
     </div>
 </div>
 
+
 <div id="postData" class="d-none">
-    {% assign nazo_posts = site.posts | where_exp: 'post', 'post.path contains "nazo/"' %}
-    {{ nazo_posts | jsonify }}
+{% assign nazo_posts = site.posts | where_exp: 'post', 'post.path contains "nazo/"' %}
+{% capture nazo_posts_json %}
+[{% for post in nazo_posts %}
+{
+    "url": "{{ post.url }}",
+    "date": "{{ post.date }}",
+    "title": "{{ post.title }}",
+    "difficulty": {{ post.difficulty }},
+    "img_id": "{{ post.img_id }}",
+    "categories": "{{ post.categories | join "," }}"
+}{% unless forloop.last %},{% endunless %}
+{% endfor %}]
+{% endcapture %}
+{{ nazo_posts_json }}
 </div>
 <script type="text/javascript" src="/assets/js/nazoml.js"></script>

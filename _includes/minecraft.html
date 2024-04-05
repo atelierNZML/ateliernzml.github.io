@@ -78,7 +78,20 @@
 </div>
 
 <div id="minecraftPostData" class="d-none">
-    {% assign minecraft_posts = site.posts | where_exp: 'post', 'post.path contains "minecraft/"' %}
-    {{ minecraft_posts | jsonify }}
+{% assign minecraft_posts = site.posts | where_exp: 'post', 'post.path contains "minecraft/"' %}
+{% capture minecraft_posts_json %}
+[{% for post in minecraft_posts %}
+{
+    "url": "{{ post.url }}",
+    "date": "{{ post.date }}",
+    "title": "{{ post.title }}",
+    "difficulty": {{ post.difficulty }},
+    "img_id1": "{{ post.img_id1 }}",
+    "players": "{{ post.players }}",
+    "categories": {{ post.categories | jsonify }}
+}{% unless forloop.last %},{% endunless %}
+{% endfor %}]
+{% endcapture %}
+{{ minecraft_posts_json }}
 </div>
 <script type="text/javascript" src="/assets/js/minecraft.js"></script>

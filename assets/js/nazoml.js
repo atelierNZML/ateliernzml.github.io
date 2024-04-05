@@ -56,7 +56,7 @@ $(function() {
         cardTitleElem.append(postTitle);
 
         let categoryList = $('<div class="category-list"></div>');
-        $.each(post.categories, function(_idx, category) {
+        $.each(post.categories.split(','), function(_idx, category) {
             categoryList.append($('<span class="badge bg-secondary py-1 px-2 me-2"></span>').text(category));
         });
 
