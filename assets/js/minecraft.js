@@ -152,8 +152,6 @@ function filterCondition(post) {
             break;
         }
     };
-    console.log(post.difficulty)
-    console.log([difficulty_condition, players_condition, keyword_condition])
 
     return difficulty_condition && players_condition && keyword_condition;
 }

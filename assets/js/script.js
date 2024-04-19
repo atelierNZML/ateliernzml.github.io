@@ -25,8 +25,15 @@ var windowScroll = function () {
  });
 };
 
+var setYear = function () {
+    const now = new Date();
+    const year = now.getFullYear();
+    $('#thisYear').text(year);
+}
+
 $( document ).ready(function() {
     windowScroll();
+    setYear();
     let fragment = window.location.hash;
     if (fragment == '#en') {
         $('.show-in-ja').hide();

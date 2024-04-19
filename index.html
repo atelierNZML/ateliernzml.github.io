@@ -2,33 +2,46 @@
 layout: default
 title: Atelier NZML
 menu: Home
-css: ['index.css', 'link-card.css']
+css: ['common.css', 'index.css', 'link-card.css']
 ---
 <section class="jumbotron-wrapper">
     <div class="jumbotron-img">
         <div class="jumbotron">
             <div class="container">
-                <h1 class="fw-bold"><span style="font-family: 'Quicksand'">atelier NZML</span> </h1>
+                <h1 class="fw-bold"><span style="font-family: 'Quicksand'">Atelier NZML</span> </h1>
                 <div class="links p-3">
                     <div class="row">
-                        <a href="/nazoml" class="link-card">
-                            <h4><i class="fa-regular fa-circle-question"></i>&nbsp;NaZoML (なぞみる)</h4>
-                            <p>
-                                謎解きの問題をお届けします
-                            </p>
-                        </a>
-                        <a href="/minecraft" class="link-card minecraft">
-                            <h4><i class="fa-solid fa-gamepad"></i>&nbsp;Minecraft</h4>
-                            <p>
-                                マインクラフトの配布マップやTIPsをお届けします
-                            </p>
-                        </a>
-                        <a href="/nzmlynx" class="link-card nzmlynx">
-                            <h4><i class="fa-solid fa-link"></i>&nbsp;NZMLyNx</h4>
-                            <p>
-                                YouTubeなど外部プラットフォームでの活動のまとめ
-                            </p>
-                        </a>
+                        <div class="col-12 col-md-4">
+                            <a href="/nazoml" class="decoration-none">
+                                <div class="link-card">
+                                    <h4><i class="fa-regular fa-circle-question"></i>&nbsp;NaZoML (なぞみる)</h4>
+                                    <p>
+                                        謎解きの問題をお届けします
+                                    </p>
+                                </div>
+
+                            </a>
+                        </div>
+                        <div class="col-12 col-md-4">
+                            <a href="/minecraft" class="decoration-none">
+                                <div class="link-card minecraft">
+                                    <h4><i class="fa-solid fa-gamepad"></i>&nbsp;Minecraft</h4>
+                                    <p>
+                                        マインクラフトの配布マップやTIPsをお届けします
+                                    </p>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="col-12 col-md-4">
+                            <a href="/nzmlynx" class="decoration-none">
+                                <div class="link-card nzmlynx">
+                                    <h4><i class="fa-solid fa-link"></i>&nbsp;NZMLyNx</h4>
+                                    <p>
+                                        YouTubeなど外部プラットフォームでの活動のまとめ
+                                    </p>
+                                </div>
+                            </a>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -39,11 +52,11 @@ css: ['index.css', 'link-card.css']
 <section id="recentNews" class="content py-3 recent-news">
     <div class="container d-flex justify-content-center">
         <div class="row w-100">
-            <div class="col-12 col-md-8">
+            <div class="col-12">
                 <h3>News</h3>
                 <div class="py-3">
                     {% for post in site.posts limit: 3 %}
-                    <div class="d-flex justify-content-start">
+                    <div class="d-flex justify-content-center">
                         <a href="{{ post.url }}" class="news-item d-block">
                         <div class="justify-content-between align-items-center d-flex">
                             <div class="news-title">
@@ -61,14 +74,17 @@ css: ['index.css', 'link-card.css']
                     {% endfor %}
                 </div>
             </div>
-            <div class="col-12 col-md-4">
-                <h3>
-                    <i class="fa-brands fa-x-twitter"></i>でも活動しています。<br>
-                    ぜひフォローしてください！
-                </h3>
-                <div class="py-3">
-                    <a href="https://twitter.com/atelier_nzml" class="btn btn-dark btn-lg" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-x-twitter"></i> 投稿一覧を見る <i class="fa-solid fa-up-right-from-square"></i></a>
-                </div>
+        </div>
+    </div>
+</section>
+
+<section class="content py-3 sns-account">
+    <div class="container mb-2">
+        <h3>SNSアカウント</h3>
+        <div class="">
+            <div class="py-3 d-flex justify-content-center">
+                <a href="https://twitter.com/atelier_nzml" class="platform-btn twitter-x fa-3x" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-x-twitter"></i></a>
+                <a href="https://www.youtube.com/@AtelierNZML" class="platform-btn youtube fa-3x" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-youtube"></i></a>
             </div>
         </div>
     </div>

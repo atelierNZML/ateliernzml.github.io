@@ -208,12 +208,11 @@
 /** Footer **/
 .site-footer{
     position:relative;
-    margin-top:40px;
-    padding:40px 0;
     font-size:12px;
     line-height:1.5;
     color:#777;
-    border-top:2px solid #eee
+    border-top:2px solid #eee;
+    padding-top: 12px;
 }
 
 
@@ -398,4 +397,26 @@
 .bg-lynx {
     background-color: #23B7E8 !important;
     color: #fff;
+}
+
+.platform-btn {
+    color: #333;
+    border: 2px solid #333;
+    border-radius: 50%;
+    width: 80px;
+    height: 80px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none;
+    margin: 0 12px;
+}
+.platform-btn:hover {
+    background-color: #333;
+    color: #fff;
+}
+
+.platform-btn.btn-sm {
+    width: 50px;
+    height: 50px;
 }
