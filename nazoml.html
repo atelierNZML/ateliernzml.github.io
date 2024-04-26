@@ -9,7 +9,7 @@ css: ['nazoml.css']
         <div class="jumbotron">
             <div class="container">
                 <div class="jumbotron-content">
-                    <h1 class="fw-bold">NaZoMLプロジェクト</h1>
+                    <h1 class="fw-bold">NaZoMLプロジェクト (謎解き)</h1>
                     <div id="jumbotron-meta-info">
                         毎週金曜日に謎解き問題を投稿します。<br>
                         ヒントなしで解けたらすごい！
@@ -37,11 +37,9 @@ css: ['nazoml.css']
 </section>
 
 <section id="recentNazo" class="content py-3">
-    <div class="recent-nazo-container mb-2">
-        <div class="pb-1">
-            <h1 class="text-center">最近投稿したNAZO</h1>
-        </div>
-        <div class="py-3 px-4 container d-flex justify-content-center">
+    <div class="container recent-nazo-container mb-2">
+        <div class="section-title">最近投稿したNAZO</div>
+        <div class="py-3 px-4 d-flex justify-content-center">
             <div class="recent-post-list">
                 
                 {% for post in nazo_posts offset: 1 limit: 5 %}
