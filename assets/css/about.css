@@ -1,3 +1,24 @@
 .jumbotron-img {
     background: #0c92ff;
 }
+
+.border-solid-black {
+    border: 1px solid #333;
+}
+
+.project-title {
+    font-size: 32px;
+    margin-bottom: 8px;
+}
+
+.project-staff {
+    font-size: 20px;
+    margin-bottom: 18px;
+    color: #bbb;
+}
+
+.project-img {
+    max-width: 350px;
+    max-height: 350px;
+    margin: auto;
+}
