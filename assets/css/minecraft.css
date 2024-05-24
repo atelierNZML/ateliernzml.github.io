@@ -1,5 +1,6 @@
 .jumbotron-img {
-    background-image: url("/assets/images/nzmlynx_main.jpg");
+    background-image: url("/assets/images/minecraft_main.png");
     background-size: cover;
+    background-position: center;
 }
 
