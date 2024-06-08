@@ -24,7 +24,8 @@
     border-bottom: 2px solid #00a5a0;
 }
 .details[open] {
-	height: 200px;
+	height: fit-content;
+	padding-bottom: 10px;
 	background-color: #bee1de;
 }
 .details-summary {
