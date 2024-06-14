@@ -21,3 +21,74 @@
 .download-btn {
     padding: 12px 36px;
 }
+
+.minecraft-hint-modal .modal-body {
+    height: calc(100vh - 200px);
+    overflow: scroll;
+}
+
+.minecraft-hint-modal .modal-footer {
+    justify-content: center;
+}
+
+.minecraft-hint-container {
+    padding: 8px 4px;
+}
+
+.minecraft-hint-subject {
+    font-size: 24px;
+}
+
+.details {
+	height: 64px;
+	transition: all ease-in-out .3s;
+	border-left: 2px solid #00a5a0;
+	border-right: 2px solid #00a5a0;
+	box-sizing: border-box;
+}
+
+.minecraft-hint:last-child {
+    border-bottom: 2px solid #00a5a0;
+}
+.details[open] {
+	height: fit-content;
+	padding-bottom: 10px;
+	background-color: #bee1de;
+}
+.details-summary {
+	display: block;
+	padding: 16px 20px;
+	border-top: 1px solid #00a5a0;
+	font-size: 20px;
+	font-weight: bold;
+	transition: all ease-in-out .3s;
+}
+.details-summary:hover {
+    cursor: pointer;
+    background-color: #bee1de;
+}
+.details-summary::-webkit-details-marker {
+	display: none;
+}
+.details-content {
+	margin: 0 20px 20px;
+	padding: 20px;
+	overflow: hidden;
+	overflow-y: auto;
+	background-color: #fff;
+}
+
+.details[open] .details-content {
+  	animation: fadeIn .3s ease;
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+    transform: translateY(-10px); 
+  }
+  100% {
+    opacity: 1;
+    transform: none;
+  }
+}

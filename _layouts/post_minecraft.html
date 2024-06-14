@@ -98,9 +98,33 @@ js:  ['minecraft-post.js']
                 <a href="{{ page.download_url }}" class="btn btn-success download-btn" target="_blank" rel="noopener noreferrer">
                     <span class="show-in-ja">配布マップをダウンロード</span><span class="show-in-en">Download</span>&nbsp;<i class="fa-solid fa-up-right-from-square"></i>
                 </a>
+                {% if content != '' %}
+                    <button type="button" class="ms-3 mt-2 btn btn-primary" data-bs-toggle="modal" data-bs-target="#minecraftHintModal" style="vertical-align: bottom;">
+                        <span class="show-in-ja">ヒントを見る</span><span class="show-in-en">Show me Hint</span>
+                    </button>
+                {% endif %}
             </div>
         </div>
     </div>
 </div>
+
+{% if content != '' %}
+<div id="minecraftHintModal" class="modal fade minecraft-hint-modal" tabindex="-1">
+    <div class="modal-dialog modal-xl">
+        <div class="modal-content">
+            <div class="modal-body p-4">
+                {{ content }}
+            </div>
+            <div class="modal-footer text-center">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">
+                    <span class="show-in-ja">閉じる</span><span class="show-in-en">Close</span>
+                </button>
+            </div>
+        </div>
+    </div>
+</div>
+{% endif %}
+
+
 
 {% include image_modal.html %}
