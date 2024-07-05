@@ -11,7 +11,6 @@ $(function() {
     
     function showScene(sceneId) {
         const scene = scenarios[sceneId];
-        console.log(scene);
         story.text(scene.text);
         choices.empty();
         $.each(scene.choices, (idx, choice) => {
