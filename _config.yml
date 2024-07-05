@@ -16,7 +16,7 @@ repository: atelierNZML/atelier-nzml.github.io
 # For production, use your github page url. ex. http://dongchuan.github.io
 # url: http://localhost:4000
 url: https://ateliernzml.github.io
-
+permalink: /pages/:title/
 ## Gem
 # gems:
 #   - jekyll-paginate

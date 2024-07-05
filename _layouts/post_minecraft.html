@@ -96,10 +96,7 @@ js:  ['minecraft-post.js']
             </div>
             <div class="download text-center">
                 <a href="{{ page.download_url }}" class="btn btn-success download-btn" target="_blank" rel="noopener noreferrer">
-                    <span class="show-in-ja">配布マップをダウンロード(公式)</span><span class="show-in-en">Download</span>&nbsp;<i class="fa-solid fa-up-right-from-square"></i>
-                </a>
-                <a href="{{ page.download_url_sub }}" class="btn btn-success download-btn" target="_blank" rel="noopener noreferrer">
-                    <span class="show-in-ja">配布マップをダウンロード(クラフターズコロニー)</span><span class="show-in-en">Download</span>&nbsp;<i class="fa-solid fa-up-right-from-square"></i>
+                    <i class="fa-solid fa-file-arrow-down fa-lg"></i>&nbsp;<span class="show-in-ja">配布マップをダウンロード(.zip)</span><span class="show-in-en">Download</span>
                 </a>
                 {% if content != '' %}
                     <button type="button" class="ms-3 mt-2 btn btn-primary" data-bs-toggle="modal" data-bs-target="#minecraftHintModal" style="vertical-align: bottom;">
@@ -107,6 +104,14 @@ js:  ['minecraft-post.js']
                     </button>
                 {% endif %}
             </div>
+            {% if page.crafters_colony_url %}
+            <div class="my-4">
+                <h5><span class="show-in-ja">外部サイト</span><span class="show-in-en">Extenal Site</span></h5>
+                <a href="{{ page.crafters_colony_url }}" class="" target="_blank" rel="noopener noreferrer">
+                    <span class="show-in-ja">クラフターズコロニー</span><span class="show-in-en">Crafters Colony</span>&nbsp;<i class="fa-solid fa-up-right-from-square"></i>
+                </a>
+            </div>
+            {% endif %}
         </div>
     </div>
 </div>
