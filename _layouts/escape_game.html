@@ -11,7 +11,11 @@ js: ['escape-game.js']
     </div>
 </div>
 <div id="game-container">
-    <div id="story"></div>
+    <div class="scene-image"><img id="image" src="" /></div>
+    <div class="px-3 py-2">
+        <div id="story"></div>
+        <div id="question" class="fw-bold fs-3"></div>
+    </div>
     <div id="choices"></div>
 </div>
 <input id="scenarioPath" type="hidden" value="/data/escape_scenario/{{ page.scenario_id }}.json" />
