@@ -30,8 +30,9 @@ $(function() {
         let paginationElem = getPaginationElem(max_pages=maxPages, current_page=currentPage);
         $('#nazoPagination').append(paginationElem);
     }
-    startPageNum = (currentPage - 1) * perPage;
-    endPageNum = Math.max(startPageNum + perPage - 1, posts.length - 1)
+    let startPageNum = (currentPage - 1) * perPage;
+    let endPageNum = Math.min(startPageNum + perPage - 1, posts.length - 1);
+    console.log(startPageNum, endPageNum)
 
     let nazoPostList = $('#nazoPostList');
     for (let i=startPageNum; i<=endPageNum; i++) {
