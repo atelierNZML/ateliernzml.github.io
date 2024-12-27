@@ -1,0 +1,55 @@
+<section class="jumbotron-wrapper d-none">
+    <div class="jumbotron-img">
+        <div class="jumbotron">
+            <div class="container">
+                <div class="jumbotron-content">
+                    <h1 class="fw-bold">NaZoML</h1>
+                    <div id="jumbotron-meta-info">
+                        50回記念謎の特設ページです
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<div class="nazo-list container" style="padding-top: 120px;">
+    <div class="row py-3">
+        {% assign nazo_posts = site.posts | sort: "date" | where: "categories", "50weeksAniversary" %}
+        {% for post in nazo_posts limit: 5 %}
+            <a href="{{ site.url }}{{ post.url }}" class="post-card mb-1">
+                <div class="text-center post-img-holder">
+                <img class="post-img" src="https://lh3.googleusercontent.com/d/{{ post.img_id }}" onerror="this.src='https://drive.google.com/uc?export=view&id={{ post.img_id }}';" alt="謎" />
+                </div>
+                <div class="post-list-title card-title">
+                    <p class="post-date">
+                        {{ post.date | date: "%Y/%m/%d" }}
+                    </p>
+                    <p class="card-htitle">
+                        {{ post.title }}
+                    </p>
+                </div>
+            </a>
+        {% endfor %}
+        {% assign missing_count = 5 | minus: nazo_posts.size %}
+        {% if missing_count > 0 %}
+            {% assign publish_dates = "2024-01-06,2024-01-07,2024-01-08,2024-01-09,2024-01-10" | split: "," %}
+            {% assign start_index = 5 | minus: missing_count %}
+            {% for i in (start_index..4) %}
+                {% assign current_date = publish_dates[i] %}
+                <a href="javascript:void()" class="post-card mb-1">
+                    <div class="text-center post-img-holder">
+                        <img class="post-img" src="/assets/images/coming_soon.png" alt="" />
+                    </div>
+                    <div class="post-list-title card-title">
+                        <p class="post-date">
+                            {{ current_date | date: "%Y/%m/%d" }}
+                        </p>
+                        <p class="card-htitle">
+                            {{ current_date | date: "%m/%d" }}に投稿予定
+                        </p>
+                    </div>
+                </a>
+            {% endfor %}
+        {% endif %}
+    </div>
+</div>
