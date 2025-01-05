@@ -434,3 +434,17 @@
     padding: 4px 16px;
     font-size: 2.0rem;
 }
+
+.scroll-horizontal {
+    overflow-y: hidden;
+    overflow-x: scroll;
+}
+
+/* .windows-scrollbar-hidden {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+}
+
+.windows-scrollbar-hidden::-webkit-scrollbar{
+    display:none;
+} */

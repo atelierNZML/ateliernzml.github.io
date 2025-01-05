@@ -26,7 +26,6 @@
 }
 
 .recent-post-list {
-    overflow: scroll;
     white-space: nowrap;
     width: 100%;
 }
