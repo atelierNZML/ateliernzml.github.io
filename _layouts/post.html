@@ -20,6 +20,16 @@ css: ['post.css']
         <img class="nazo-img" src="https://lh3.googleusercontent.com/d/{{ page.img_id }}" onerror="this.src='https://drive.google.com/uc?export=view&id={{ page.img_id }}';" alt="謎" />
     </div>
 
+    <div class="px-4 pt-2">
+        <label for="userAnswer">答えを入力</label>
+        <div class="d-flex">
+            <input type="text" id="userAnswerInput" class="form-control me-1" />
+            <button type="button" id="answerSubmitBtn" class="btn btn-success" style="width: 80px;">送信</button>
+        </div>
+        <div id="answerCorrect" class="result text-danger text-center" style="display: none;">おめでとう、正解！</div>
+        <div id="answerIncorrect" class="result text-primary text-center" style="display: none;">残念、不正解。</div>
+    </div>
+
     <div class="px-4 pb-4 pt-2">
         <div class="my-3">
             {% if page.hint1 != nil %}
@@ -50,7 +60,7 @@ css: ['post.css']
             {% endif %}
         </div>
 
-        <div class="answer">
+        <div class="answer" data-answer="{{ page.answer }}">
             <details class="details nazo-answer">
                 <summary class="details-summary">答え</summary>
                 <div class="details-content">
@@ -64,3 +74,4 @@ css: ['post.css']
         </div>
     </div>
 </div>
+<script type="text/javascript" src="/assets/js/nazo-post.js"></script>
