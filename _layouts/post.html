@@ -30,7 +30,7 @@ css: ['post.css']
         <div id="answerIncorrect" class="result text-primary text-center" style="display: none;">残念、不正解。</div>
     </div>
 
-    <div class="px-4 pb-4 pt-2">
+    <div class="px-4 pb-2 pt-2">
         <div class="my-3">
             {% if page.hint1 != nil %}
             <details class="details nazo-hint">
@@ -72,6 +72,11 @@ css: ['post.css']
                 </div>
             </details>
         </div>
+    </div>
+    <div class="px-4 pb-4 pt-2 text-center">
+        <a class="btn btn-dark badge bg-dark rounded-pill" href="https://x.com/intent/tweet?url={{ site.url }}{{ page.url }}&text=「{{ page.title }}」の謎を解いたよ!%0Aあなたも解いてみて!%0A&hashtags=謎解き,AtelierNZML,NaZoML" target="_blank" rel="noopener noreferrer">
+            <i class="fa-brands fa-x-twitter"></i>で共有する
+        </a>
     </div>
 </div>
 <script type="text/javascript" src="/assets/js/nazo-post.js"></script>
