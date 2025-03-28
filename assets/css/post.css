@@ -55,6 +55,11 @@
   	animation: fadeIn .3s ease;
 }
 
+.recommend-nazo-list {
+	white-space: nowrap;
+    width: 100%;
+}
+
 @keyframes fadeIn {
   0% {
     opacity: 0;
