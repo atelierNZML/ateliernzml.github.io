@@ -13,8 +13,18 @@
                 ©︎  AtelierNZML 2014 - <span id="thisYear"></span>. All Rights Reserved.
             </div>
             <div class="d-flex justify-content-end col-12 col-md-6 mt-1">
-                <a href="https://twitter.com/atelier_nzml" class="platform-btn btn-sm twitter-x fa-2x" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-x-twitter"></i></a>
-                <a href="https://www.youtube.com/@AtelierNZML" class="platform-btn btn-sm youtube fa-2x" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-youtube"></i></a>
+                {% if page.menu == 'Minecraft' %}
+                    <a href="https://x.com/nzml_minecraft" class="platform-btn btn-sm twitter-x fa-2x" target="_blank" rel="noopener noreferrer">
+                        <i class="fa-brands fa-x-twitter" style="color: black;"></i>
+                    </a>
+                {% else %}
+                    <a href="https://x.com/nzml_nazo" class="platform-btn btn-sm twitter-x fa-2x" target="_blank" rel="noopener noreferrer">
+                        <i class="fa-brands fa-x-twitter" style="color: black;"></i>
+                    </a>
+                {% endif %}
+                <a href="https://www.youtube.com/@AtelierNZML" class="platform-btn btn-sm youtube fa-2x" target="_blank" rel="noopener noreferrer">
+                    <i class="fa-brands fa-youtube" style="color: red;"></i>
+                </a>
             </div>
         </div>
         {% endif %}
