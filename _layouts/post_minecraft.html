@@ -35,8 +35,13 @@ js:  ['minecraft-post.js']
                 {% if page.img_id3 != nil %}
                 <img class="nazo-sub-img click-to-expand-img" src="https://lh3.googleusercontent.com/d/{{ page.img_id3 }}" onerror="this.src='https://drive.google.com/uc?export=view&id={{ page.img_id3 }}';" alt="配布マップスクショ3" />
                 {% endif %}
-                {% if page.img_id4 != nil %}
+            </div>
+            {% endif %}
+            {% if page.img_id4 != nil %}
+            <div class="d-flex justify-content-between nazo-img mt-2">
                 <img class="nazo-sub-img click-to-expand-img" src="https://lh3.googleusercontent.com/d/{{ page.img_id4 }}" onerror="this.src='https://drive.google.com/uc?export=view&id={{ page.img_id4 }}';" alt="配布マップスクショ4" />
+                {% if page.img_id5 != nil %}
+                <img class="nazo-sub-img click-to-expand-img" src="https://lh3.googleusercontent.com/d/{{ page.img_id5 }}" onerror="this.src='https://drive.google.com/uc?export=view&id={{ page.img_id5 }}';" alt="配布マップスクショ4" />
                 {% endif %}
             </div>
             {% endif %}
@@ -95,9 +100,16 @@ js:  ['minecraft-post.js']
                 </table>
             </div>
             <div class="download text-center">
-                <a href="{{ page.download_url }}" class="btn btn-success download-btn" target="_blank" rel="noopener noreferrer">
-                    <i class="fa-solid fa-file-arrow-down fa-lg"></i>&nbsp;<span class="show-in-ja">配布マップをダウンロード(.zip)</span><span class="show-in-en">Download</span>
-                </a>
+                {% if page.crafters_colony_url %}
+                    <a href="{{ page.download_url }}" class="btn btn-success download-btn" target="_blank" rel="noopener noreferrer">
+                        <span class="show-in-ja">クラフターズコロニーに移動</span><span class="show-in-en">Jump to Crafters Colony</span>&nbsp;<i class="fa-solid fa-up-right-from-square"></i>
+                    </a>
+                {% elsif page.download_url %}
+                    <a href="{{ page.download_url }}" class="btn btn-success download-btn" target="_blank" rel="noopener noreferrer">
+                        <i class="fa-solid fa-file-arrow-down fa-lg"></i>&nbsp;<span class="show-in-ja">配布マップをダウンロード(.zip)</span><span class="show-in-en">Download</span>
+                    </a>
+                {% endif %}
+
                 {% if content != '' %}
                     <button type="button" class="ms-3 mt-2 btn btn-primary" data-bs-toggle="modal" data-bs-target="#minecraftHintModal" style="vertical-align: bottom;">
                         <span class="show-in-ja">ヒントを見る</span><span class="show-in-en">Show me Hint</span>
@@ -105,7 +117,7 @@ js:  ['minecraft-post.js']
                 {% endif %}
             </div>
             {% if page.crafters_colony_url %}
-            <div class="my-4">
+            <div class="my-4 d-none">
                 <h5><span class="show-in-ja">外部サイト</span><span class="show-in-en">Extenal Site</span></h5>
                 <a href="{{ page.crafters_colony_url }}" class="" target="_blank" rel="noopener noreferrer">
                     <span class="show-in-ja">クラフターズコロニー</span><span class="show-in-en">Crafters Colony</span>&nbsp;<i class="fa-solid fa-up-right-from-square"></i>
